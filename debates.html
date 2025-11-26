@@ -45,68 +45,79 @@
         }
 
         /* Make iframes smaller for side by side layout */
+        /* Desktop iframe size */
         .fb-post-wrapper iframe {
-            width: 400px;
-            height: 600px;
+            width: 500px;
+            /* increase from 400px to 500px */
+            height: auto;
+            /* let height adjust automatically */
+            min-height: 600px;
+            /* ensure it's not too short */
         }
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(60, 60, 60, 0.6);
-  color: #FFD120;
-  font-size: 18px;
-  line-height: 1.6;
-  padding: 15px 0;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  z-index: 20;
-  backdrop-filter: blur(5px);
-}
-
-footer a {
-  color: #FFD120;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-footer a:hover {
-  color: #ffffff;
-}
 
 
-/* Mobile screens */
-@media screen and (max-width: 600px) {
-  .fb-posts-container {
-    flex-direction: column;
-    align-items: center;
-  }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(60, 60, 60, 0.6);
+            color: #FFD120;
+            font-size: 18px;
+            line-height: 1.6;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            z-index: 20;
+            backdrop-filter: blur(5px);
+        }
 
-  footer {
-    flex-direction: column;
-    gap: 4px;           /* smaller spacing between items */
-    font-size: 14px;    /* smaller text */
-    padding: 6px 0;     /* smaller height */
-  }
+        footer a {
+            color: #FFD120;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
 
-  footer span {
-    display: flex;
-    align-items: center;
-    gap: 6px;           /* smaller gap between icon and text */
-  }
+        footer a:hover {
+            color: #ffffff;
+        }
 
-  footer img {
-    width: 18px !important; /* smaller icons */
-    vertical-align: middle;
-  }
-}
 
+        /* Mobile screens */
+        @media screen and (max-width: 600px) {
+            .fb-posts-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 4px;
+                /* smaller spacing between items */
+                font-size: 14px;
+                /* smaller text */
+                padding: 6px 0;
+                /* smaller height */
+            }
+
+            footer span {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                /* smaller gap between icon and text */
+            }
+
+            footer img {
+                width: 18px !important;
+                /* smaller icons */
+                vertical-align: middle;
+            }
+        }
     </style>
 </head>
-    <header>تفاصيل مناقشات نادي صوفيا للفلسف</header>
+<header>تفاصيل مناقشات نادي صوفيا للفلسف</header>
 
 <body>
     <div class="fb-posts-container">
@@ -118,6 +129,123 @@ footer a:hover {
                 src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Z8uTaYFVvxQKyVU77jVjZg5N4YFcnBb4QPK63W3xEGLeaBZNXEdnxjm8FPFGmyfNl%26id%3D100063707634531&show_text=true&width=500"
                 style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"> </iframe> </div>
+        <div class="fb-post-wrapper">
+            <iframe
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02jPzRt8BUs5CpVAt8gNtBKh7BPToed6ocBoDCJMwKt4Sk4X7JDViXHAYrF7UBeyppl%26id%3D100063707634531&show_text=true&width=500"
+                width="500" height="761" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+
+        <div class="fb-post-wrapper">
+            <iframe
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid05Y71JJdDZxLjDamWn5i5Z5RxEb1FuaGNGvvaXygpdpS1yJfjysUuupduTMyhS2iVl%26id%3D100063707634531&show_text=true&width=500"
+                width="500" height="741" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+        <div class="fb-post-wrapper">
+            <iframe
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ndcY75BBxytWP4oPazGezsSn61z8tYBwn7k3Bdc2Qx5aMVZDoeFgTnpjxdq2ZtAsl%26id%3D100063707634531&show_text=true&width=500"
+                width="500" height="658" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+        <div class="fb-post-wrapper">
+            <iframe
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02Ka3dsZmMH4aqy8mfkspSbTov9yddBzTFvf4HdyGDy6xGe8g3row2MYu6vwTm3NpDl%26id%3D100063707634531&show_text=true&width=500"
+                width="500" height="767" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+
+        <div class="fb-post-wrapper">
+            <iframe
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02Ka3dsZmMH4aqy8mfkspSbTov9yddBzTFvf4HdyGDy6xGe8g3row2MYu6vwTm3NpDl%26id%3D100063707634531&show_text=true&width=500"
+                width="500" height="767" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+
+        <div class="fb-post-wrapper">
+            <iframe
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02244he9TzerVwMWtMkCMCdasTXgTS71yuNuTgU5ZP86VSiyR56hUGCFSxnRK6sVZJl%26id%3D100063707634531&show_text=true&width=500"
+                width="500" height="747" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+
+        <div class="fb-post-wrapper">
+            <iframe
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid04h4xRJkQjKwUtyH3yp5HYnhf1oqyR8JLLHdqJHUa6NHHxBCzWScyx2q63h1TW5AAl%26id%3D100063707634531&show_text=true&width=500"
+                width="500" height="767" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+
+        <div class="fb-post-wrapper">
+            <iframe
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0oY9N91k3nGTNmwW7WNFxjaBJuh9y6o3eZv2urss9TSa4zboi3EBfPpXRSDyewYwUl%26id%3D100063707634531&show_text=true&width=500"
+                width="500" height="741" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+
+        <div class="fb-post-wrapper">
+            <iframe
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0xQR3mNnmUR2bJaVALJNTxfYKBt3wLpqwQqrciWybqrEShyXeSchUzVKXrNbL7YaJl%26id%3D100063707634531&show_text=true&width=500"
+                width="500" height="588" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+
+        <div class="fb-post-wrapper">
+            <iframe
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0416eK8Wtx3kPnHpPHXj1QiyUp4pQm8iNCKiPxkZJACKUG7SMWDHKSVJz7FpPBM6fl%26id%3D100063707634531&show_text=true&width=500"
+                width="500" height="767" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+
+        <div class="fb-post-wrapper">
+            <iframe
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02Ugx6o5wsNLk2MQPqFRr9irUAEcehKpe2Lr2eUAdh3wqwgMEk7nizBHgxtj89x1C2l%26id%3D100063707634531&show_text=true&width=500"
+                width="500" height="646" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+
+        <div class="fb-post-wrapper">
+            <iframe
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0enD4iQUFw9D7TDjyMA88F2U62XUGNhVrudjYBAmi53iGTw7vTGBk8wee3d9tNBXpl%26id%3D100063707634531&show_text=true&width=500"
+                width="500" height="715" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+        <div class="fb-post-wrapper">
+            <iframe
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02yFzi6AYHX9BQwnt5YsDWj5FqpY3gk2RRPVm1D8TrWeYHpf1CBxaY7VrtdsiazBuCl%26id%3D100063707634531&show_text=true&width=500"
+                width="500" height="684" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+
+        <div class="fb-post-wrapper">
+            <iframe
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02P4uidgwd5f2zvvrp6pSFGVffCD6YkeH7JTNZ8HudLaJMNjz5Wd8xSwFvMZ2in9ql%26id%3D100063707634531&show_text=true&width=500"
+                width="500" height="734" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+
+        <div class="fb-post-wrapper">
+            <iframe
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0iQcCtWiyok1XqJXUif8ooCUPxLBcxkWqtttXXdTANEoYTXTniMJUDFfugBAyCWTl%26id%3D100063707634531&show_text=true&width=500"
+                width="500" height="773" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+
     </div> <!-- Footer Bar -->
     <footer> <span> <img src="images/mail.png" alt="Email" style="width:20px; vertical-align:middle; margin-right:5px;">
             <a href="mailto:sophia.club2020@gmail.com">sophia.club2020@gmail.com</a> </span> <span> <img

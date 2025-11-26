@@ -2,108 +2,147 @@
 <html lang="ar">
 
 <head>
-  <meta charset="UTF-8">
-  <title>مقالات نادي صوفيا الفلسفي</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Arial", sans-serif;
-      background-color: #222222;
-      color: #FFD120;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-    }
+    <meta charset="UTF-8">
+    <title>مقالات نادي صوفيا الفلسفي</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Arial", sans-serif;
+            background-color: #222222;
+            color: #FFD120;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-    header {
-      width: 100%;
-      padding: 20px;
-      text-align: center;
-      background-color: rgba(60, 60, 60, 0.7);
-      font-size: 24px;
-      font-weight: bold;
-    }
+        header {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(60, 60, 60, 0.7);
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-    /* White container for Facebook post */
-    .fb-post-wrapper {
-      background: white;
-      padding: 10px;
-      border-radius: 10px;
-      display: inline-block;
-      margin: 40px 20px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    }
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(60, 60, 60, 0.6);
-  color: #FFD120;
-  font-size: 18px;
-  line-height: 1.6;
-  padding: 15px 0;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  z-index: 20;
-  backdrop-filter: blur(5px);
-}
+        /* Container for all Facebook posts */
+        .fb-posts-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
 
-footer a {
-  color: #FFD120;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
+        /* White container for Facebook post */
+        .fb-post-wrapper {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
 
-footer a:hover {
-  color: #ffffff;
-}
+        /* Desktop iframe size */
+        .fb-post-wrapper iframe {
+            width: 500px;
+            height: auto;
+            min-height: 600px;
+        }
 
-/* Mobile screens */
-@media screen and (max-width: 600px) {
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(60, 60, 60, 0.6);
+            color: #FFD120;
+            font-size: 18px;
+            line-height: 1.6;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            z-index: 20;
+            backdrop-filter: blur(5px);
+        }
 
-  footer {
-    flex-direction: column;
-    gap: 2px;           /* minimal spacing */
-    font-size: 12px;    /* smaller text */
-    line-height: 1.2;   /* tighter line height */
-    padding: 4px 5px;   /* very small padding */
-  }
+        footer a {
+            color: #FFD120;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
 
-  footer span {
-    display: flex;
-    align-items: center;
-    gap: 4px;           /* smaller gap between icon and text */
-  }
+        footer a:hover {
+            color: #ffffff;
+        }
 
-  footer img {
-    width: 16px !important; /* smaller icons */
-    vertical-align: middle;
-    margin: 0;               /* remove extra margin */
-  }
-}
+        /* Mobile screens */
+        @media screen and (max-width: 600px) {
+            .fb-posts-container {
+                flex-direction: column;
+                align-items: center;
+            }
 
-  </style>
+            footer {
+                flex-direction: column;
+                gap: 4px;
+                font-size: 14px;
+                padding: 6px 0;
+            }
+
+            footer span {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+
+            footer img {
+                width: 18px !important;
+                vertical-align: middle;
+            }
+        }
+    </style>
 </head>
+
 <header>مقالات نادي صوفيا للفلسف</header>
 
 <body>
-  <div class="fb-post-wrapper"> <iframe
-      src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02bkvcQfaidPeo193h2qWWCxW1nJXpQKkHVd8LNnt1VtPnN79SKGsuwj7y1zeV6Lbfl%26id%3D100063707634531&show_text=true&width=500"
-      width="500" height="608" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
-      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"> </iframe> </div>
-  <!-- Footer Bar -->
-  <footer> <span> <img src="images/mail.png" alt="Email" style="width:20px; vertical-align:middle; margin-right:5px;">
-      <a href="mailto:sophia.club2020@gmail.com">sophia.club2020@gmail.com</a> </span> <span> <img
-        src="images/facebook.png" alt="Facebook" style="width:26px; vertical-align:middle; margin-right:5px;"> <a
-        href="https://www.facebook.com/profile.php?id=100063707634531" target="_blank">صفحة فيسبوك</a> </span> <span>
-      <img src="images/instagram.png" alt="Instagram" style="width:28px; vertical-align:middle; margin-right:5px;"> <a
-        href="https://www.instagram.com/sophiaphilosophy/?hl=fr" target="_blank">صفحة انستغرام</a> </span> </footer>
+    <div class="fb-posts-container">
+        <!-- Existing article -->
+        <div class="fb-post-wrapper">
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02bkvcQfaidPeo193h2qWWCxW1nJXpQKkHVd8LNnt1VtPnN79SKGsuwj7y1zeV6Lbfl%26id%3D100063707634531&show_text=true&width=500" 
+                style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+            </iframe>
+        </div>
+
+        <!-- New article -->
+        <div class="fb-post-wrapper">
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02mKvyFrnUSmK79kgzVTcuGLKu8K5t7LbuCSbBnQMYZrNwZT2HGdYh1bNXkwmuomKAl%26id%3D100063707634531&show_text=true&width=500" 
+                style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+            </iframe>
+        </div>
+
+        
+    </div>
+
+    <!-- Footer Bar -->
+    <footer>
+        <span>
+            <img src="images/mail.png" alt="Email" style="width:20px; vertical-align:middle; margin-right:5px;">
+            <a href="mailto:sophia.club2020@gmail.com">sophia.club2020@gmail.com</a>
+        </span>
+        <span>
+            <img src="images/facebook.png" alt="Facebook" style="width:26px; vertical-align:middle; margin-right:5px;">
+            <a href="https://www.facebook.com/profile.php?id=100063707634531" target="_blank">صفحة فيسبوك</a>
+        </span>
+        <span>
+            <img src="images/instagram.png" alt="Instagram" style="width:28px; vertical-align:middle; margin-right:5px;">
+            <a href="https://www.instagram.com/sophiaphilosophy/?hl=fr" target="_blank">صفحة انستغرام</a>
+        </span>
+    </footer>
 </body>
 
 </html>

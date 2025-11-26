@@ -77,6 +77,7 @@
       direction: rtl;
     }
 
+    /* --- FOOTER --- */
     footer {
       position: fixed;
       bottom: 0;
@@ -92,6 +93,18 @@
       gap: 40px;
       z-index: 20;
       backdrop-filter: blur(5px);
+    }
+
+    footer span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      /* spacing between icon and text */
+    }
+
+    footer img {
+      width: 20px;
+      vertical-align: middle;
     }
 
     footer a {
@@ -113,7 +126,6 @@
       z-index: 10;
     }
 
-    /* Bigger Neon Buttons */
     .neon-buttons a {
       position: relative;
       display: inline-block;
@@ -126,7 +138,6 @@
       font-size: 22px;
     }
 
-    /* Blue Neon Button */
     .neon-blue {
       color: #00bfff;
     }
@@ -134,13 +145,36 @@
     .neon-blue:hover {
       background: #00bfff;
       color: #050801;
-      box-shadow: 0 0 5px #00bfff,
-        0 0 25px #00bfff,
-        0 0 50px #00bfff,
-        0 0 200px #00bfff;
+      box-shadow: 0 0 5px #00bfff, 0 0 25px #00bfff, 0 0 50px #00bfff, 0 0 200px #00bfff;
     }
 
-    /* Blue button span animations */
+    .neon-red {
+      color: #ff073a;
+    }
+
+    .neon-red:hover {
+      background: #ff073a;
+      color: #050801;
+      box-shadow: 0 0 5px #ff073a, 0 0 25px #ff073a, 0 0 50px #ff073a, 0 0 200px #ff073a;
+    }
+
+    .neon-yellow {
+      color: #ffd700;
+    }
+
+    .neon-yellow:hover {
+      background: #ffd700;
+      color: #050801;
+      box-shadow: 0 0 5px #ffd700, 0 0 25px #ffd700, 0 0 50px #ffd700, 0 0 200px #ffd700;
+    }
+
+    .neon-buttons a span {
+      position: absolute;
+      display: block;
+    }
+
+    /* --- BUTTON ANIMATIONS --- */
+    /* Blue Keyframes */
     .neon-blue span:nth-child(1) {
       background: linear-gradient(90deg, transparent, #00bfff);
       animation: nb1-blue 1s linear infinite;
@@ -177,7 +211,6 @@
       height: 100%;
     }
 
-    /* Blue Keyframes */
     @keyframes nb1-blue {
       0% {
         left: -100%;
@@ -222,41 +255,7 @@
       }
     }
 
-    /* Red Neon Button */
-    .neon-red {
-      color: #ff073a;
-    }
-
-    .neon-red:hover {
-      background: #ff073a;
-      color: #050801;
-      box-shadow: 0 0 5px #ff073a,
-        0 0 25px #ff073a,
-        0 0 50px #ff073a,
-        0 0 200px #ff073a;
-    }
-
-    /* Yellow Neon Button */
-    .neon-yellow {
-      color: #ffd700;
-    }
-
-    .neon-yellow:hover {
-      background: #ffd700;
-      color: #050801;
-      box-shadow: 0 0 5px #ffd700,
-        0 0 25px #ffd700,
-        0 0 50px #ffd700,
-        0 0 200px #ffd700;
-    }
-
-    /* Span positions for all buttons */
-    .neon-buttons a span {
-      position: absolute;
-      display: block;
-    }
-
-    /* Red Button Animations */
+    /* Red Keyframes */
     .neon-red span:nth-child(1) {
       background: linear-gradient(90deg, transparent, #ff073a);
       animation: nb1 1s linear infinite;
@@ -293,44 +292,6 @@
       height: 100%;
     }
 
-    /* Yellow Button Animations */
-    .neon-yellow span:nth-child(1) {
-      background: linear-gradient(90deg, transparent, #ffd700);
-      animation: nb1-yellow 1s linear infinite;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 2px;
-    }
-
-    .neon-yellow span:nth-child(2) {
-      background: linear-gradient(180deg, transparent, #ffd700);
-      animation: nb2-yellow 1s linear infinite 0.25s;
-      top: -100%;
-      right: 0;
-      width: 2px;
-      height: 100%;
-    }
-
-    .neon-yellow span:nth-child(3) {
-      background: linear-gradient(270deg, transparent, #ffd700);
-      animation: nb3-yellow 1s linear infinite 0.5s;
-      bottom: 0;
-      right: -100%;
-      width: 100%;
-      height: 2px;
-    }
-
-    .neon-yellow span:nth-child(4) {
-      background: linear-gradient(360deg, transparent, #ffd700);
-      animation: nb4-yellow 1s linear infinite 0.75s;
-      bottom: -100%;
-      left: 0;
-      width: 2px;
-      height: 100%;
-    }
-
-    /* Red Keyframes */
     @keyframes nb1 {
       0% {
         left: -100%;
@@ -376,6 +337,42 @@
     }
 
     /* Yellow Keyframes */
+    .neon-yellow span:nth-child(1) {
+      background: linear-gradient(90deg, transparent, #ffd700);
+      animation: nb1-yellow 1s linear infinite;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+    }
+
+    .neon-yellow span:nth-child(2) {
+      background: linear-gradient(180deg, transparent, #ffd700);
+      animation: nb2-yellow 1s linear infinite 0.25s;
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+    }
+
+    .neon-yellow span:nth-child(3) {
+      background: linear-gradient(270deg, transparent, #ffd700);
+      animation: nb3-yellow 1s linear infinite 0.5s;
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+    }
+
+    .neon-yellow span:nth-child(4) {
+      background: linear-gradient(360deg, transparent, #ffd700);
+      animation: nb4-yellow 1s linear infinite 0.75s;
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+    }
+
     @keyframes nb1-yellow {
       0% {
         left: -100%;
@@ -420,24 +417,21 @@
       }
     }
 
-    /* MOBILE-FRIENDLY ADJUSTMENTS - CONTENT SLIGHTLY SMALLER, FOOTER ICONS SMALLER, FOOTER TEXT SMALLER */
+    /* --- MOBILE RESPONSIVE --- */
     @media screen and (max-width: 768px) {
 
       html,
       body {
         font-size: 14px;
-        /* slightly smaller overall text */
       }
 
       .logo {
         width: 115px;
-        /* slightly smaller logo */
         margin-top: 3.5vh;
       }
 
       .logo-text {
         font-size: 13px;
-        /* slightly smaller paragraph text */
         line-height: 1.25;
         margin-top: 2.5vh;
         padding: 0 6px;
@@ -447,41 +441,34 @@
       .neon-buttons {
         flex-direction: column;
         gap: 12px;
-        /* slightly smaller gap between buttons */
         margin-top: 4vh;
         align-items: center;
       }
 
       .neon-buttons a {
         padding: 12px 16px;
-        /* slightly smaller button padding */
         font-size: 13px;
-        /* slightly smaller button text */
         letter-spacing: 1px;
         min-width: 130px;
       }
 
       svg {
         height: 34vh;
-        /* slightly smaller background */
       }
 
       footer {
         flex-direction: column;
-        gap: 0;
-        /* keep same spacing as before */
+        gap: 4px;
         font-size: 6px;
-        /* smaller footer text */
-        padding: 0 2vw;
-        /* same minimal padding */
+        padding: 4px 2vw;
       }
 
       footer img {
-        width: 4px;
-        /* smaller icons */
+        width: 12px;
       }
     }
   </style>
+
 
 </head>
 
@@ -581,21 +568,21 @@
   <!-- Footer Bar -->
   <footer>
     <span>
-      <img src="images/mail.png" alt="Email" style="width:20px; vertical-align:middle; margin-right:5px;">
+      <img src="images/mail.png" alt="Email">
       <a href="mailto:sophia.club2020@gmail.com">sophia.club2020@gmail.com</a>
     </span>
 
     <span>
-      <img src="images/facebook.png" alt="Facebook" style="width:26px; vertical-align:middle; margin-right:5px;">
+      <img src="images/facebook.png" alt="Facebook">
       <a href="https://www.facebook.com/profile.php?id=100063707634531" target="_blank">صفحة فيسبوك</a>
     </span>
+
     <span>
-      <img src="images/instagram.png" alt="Instagram" style="width:28px; vertical-align:middle; margin-right:5px;">
+      <img src="images/instagram.png" alt="Instagram">
       <a href="https://www.instagram.com/sophiaphilosophy/?hl=fr" target="_blank">صفحة انستغرام</a>
     </span>
-
-
   </footer>
+
 
 
 

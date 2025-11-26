@@ -6,8 +6,7 @@
 
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-<style>
-html, body {
+<style>html, body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -87,6 +86,8 @@ footer a {
   transition: color 0.3s;
 }
 
+footer a:hover { color: #ffffff; }
+
 /* --- NEON BUTTONS AREA --- */
 .neon-buttons {
   margin-top: 40px;
@@ -99,27 +100,26 @@ footer a {
 .neon-buttons a {
   position: relative;
   display: inline-block;
-  padding: 30px 50px;   /* Bigger padding */
+  padding: 30px 50px;
   text-decoration: none;
   text-transform: uppercase;
   transition: 0.5s;
   letter-spacing: 3px;
   overflow: hidden;
-  font-size: 22px;      /* Bigger font size */
+  font-size: 22px;
 }
 
 /* Blue Neon Button */
 .neon-blue {
-  color: #00bfff; /* default blue */
+  color: #00bfff;
 }
 .neon-blue:hover {
   background: #00bfff;
   color: #050801;
-  box-shadow: 
-      0 0 5px #00bfff,
-      0 0 25px #00bfff,
-      0 0 50px #00bfff,
-      0 0 200px #00bfff;
+  box-shadow: 0 0 5px #00bfff,
+              0 0 25px #00bfff,
+              0 0 50px #00bfff,
+              0 0 200px #00bfff;
 }
 
 /* Blue button span animations */
@@ -134,74 +134,101 @@ footer a {
 @keyframes nb3-blue { 0% { right:-100%; } 50%,100% { right:100%; } }
 @keyframes nb4-blue { 0% { bottom:-100%; } 50%,100% { bottom:100%; } }
 
-
 /* Red Neon Button */
 .neon-red {
-  color: #ff073a; /* default red */
+  color: #ff073a;
 }
 .neon-red:hover {
   background: #ff073a;
   color: #050801;
-  box-shadow: 
-      0 0 5px #ff073a,
-      0 0 25px #ff073a,
-      0 0 50px #ff073a,
-      0 0 200px #ff073a;
+  box-shadow: 0 0 5px #ff073a,
+              0 0 25px #ff073a,
+              0 0 50px #ff073a,
+              0 0 200px #ff073a;
 }
 
 /* Yellow Neon Button */
 .neon-yellow {
-  color: #ffd700; /* default yellow */
+  color: #ffd700;
 }
 .neon-yellow:hover {
   background: #ffd700;
   color: #050801;
-  box-shadow: 
-      0 0 5px #ffd700,
-      0 0 25px #ffd700,
-      0 0 50px #ffd700,
-      0 0 200px #ffd700;
+  box-shadow: 0 0 5px #ffd700,
+              0 0 25px #ffd700,
+              0 0 50px #ffd700,
+              0 0 200px #ffd700;
 }
 
-/* Span positions for both buttons */
+/* Span positions for all buttons */
 .neon-buttons a span {
   position: absolute;
   display: block;
 }
 
-/* --- RED BUTTON SPAN ANIMATIONS --- */
+/* Red Button Animations */
 .neon-red span:nth-child(1) { background: linear-gradient(90deg, transparent, #ff073a); animation: nb1 1s linear infinite; top:0; left:-100%; width:100%; height:2px; }
 .neon-red span:nth-child(2) { background: linear-gradient(180deg, transparent, #ff073a); animation: nb2 1s linear infinite 0.25s; top:-100%; right:0; width:2px; height:100%; }
 .neon-red span:nth-child(3) { background: linear-gradient(270deg, transparent, #ff073a); animation: nb3 1s linear infinite 0.5s; bottom:0; right:-100%; width:100%; height:2px; }
 .neon-red span:nth-child(4) { background: linear-gradient(360deg, transparent, #ff073a); animation: nb4 1s linear infinite 0.75s; bottom:-100%; left:0; width:2px; height:100%; }
 
-/* --- YELLOW BUTTON SPAN ANIMATIONS --- */
+/* Yellow Button Animations */
 .neon-yellow span:nth-child(1) { background: linear-gradient(90deg, transparent, #ffd700); animation: nb1-yellow 1s linear infinite; top:0; left:-100%; width:100%; height:2px; }
 .neon-yellow span:nth-child(2) { background: linear-gradient(180deg, transparent, #ffd700); animation: nb2-yellow 1s linear infinite 0.25s; top:-100%; right:0; width:2px; height:100%; }
 .neon-yellow span:nth-child(3) { background: linear-gradient(270deg, transparent, #ffd700); animation: nb3-yellow 1s linear infinite 0.5s; bottom:0; right:-100%; width:100%; height:2px; }
 .neon-yellow span:nth-child(4) { background: linear-gradient(360deg, transparent, #ffd700); animation: nb4-yellow 1s linear infinite 0.75s; bottom:-100%; left:0; width:2px; height:100%; }
 
-/* --- RED KEYFRAMES --- */
+/* Red Keyframes */
 @keyframes nb1 { 0% { left:-100%; } 50%,100% { left:100%; } }
 @keyframes nb2 { 0% { top:-100%; } 50%,100% { top:100%; } }
 @keyframes nb3 { 0% { right:-100%; } 50%,100% { right:100%; } }
 @keyframes nb4 { 0% { bottom:-100%; } 50%,100% { bottom:100%; } }
 
-/* --- YELLOW KEYFRAMES --- */
+/* Yellow Keyframes */
 @keyframes nb1-yellow { 0% { left:-100%; } 50%,100% { left:100%; } }
 @keyframes nb2-yellow { 0% { top:-100%; } 50%,100% { top:100%; } }
 @keyframes nb3-yellow { 0% { right:-100%; } 50%,100% { right:100%; } }
 @keyframes nb4-yellow { 0% { bottom:-100%; } 50%,100% { bottom:100%; } }
 
-footer a:hover { color: #ffffff; }
-
+/* ----------------- MOBILE ----------------- */
 @media screen and (max-width: 600px) {
+  .logo {
+    width: 120px;
+    margin-top: -15vh;
+  }
+
+  .logo-text {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-top: 20px;
+    max-width: 90%;
+  }
+
+  .neon-buttons {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .neon-buttons a {
+    padding: 15px 30px;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+  }
+
   footer {
     flex-direction: column;
-    gap: 10px;
-    font-size: 16px;
+    gap: 6px;
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  footer img {
+    width: 16px;
+    vertical-align: middle;
   }
 }
+
 </style>
 
 </head>

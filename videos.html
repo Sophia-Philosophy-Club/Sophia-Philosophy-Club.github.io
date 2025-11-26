@@ -76,15 +76,14 @@ footer a {
 footer a:hover {
   color: #ffffff;
 }
-
 /* Medium screens */
 @media screen and (max-width: 900px) {
-  .fb-post-wrapper iframe {
+  .fb-post-wrapper iframe,
+  .fb-post-wrapper video {
     width: 300px;
     height: 320px;
   }
 }
-
 
 /* Mobile screens */
 @media screen and (max-width: 600px) {
@@ -93,9 +92,16 @@ footer a:hover {
     align-items: center;
   }
 
+  .fb-post-wrapper iframe,
+  .fb-post-wrapper video {
+    width: 90%;         /* scale down to 90% of screen width */
+    height: auto;       /* auto height to keep proportions */
+    min-height: 250px;  /* ensure it's not too short */
+  }
+
   footer {
     flex-direction: column;
-    gap: 4px;           /* smaller spacing between items */
+    gap: 4px;
     font-size: 14px;    /* smaller text */
     padding: 6px 0;     /* smaller height */
   }
@@ -103,7 +109,7 @@ footer a:hover {
   footer span {
     display: flex;
     align-items: center;
-    gap: 6px;           /* smaller gap between icon and text */
+    gap: 5px;           /* smaller gap */
   }
 
   footer img {
@@ -127,7 +133,7 @@ footer a:hover {
         <source src="videos/لغة_الضاد.mp4" type="video/mp4"> متصفحك لا يدعم عرض الفيديو.
       </video> <!-- Link to Facebook post -->
       <div style="margin-top:10px; text-align:center;"> <a href="https://www.facebook.com/share/v/1BgMaE6MXj/"
-          target="_blank" style="color:#FFD120; font-weight:bold; text-decoration:none;"> رابط المنشور على فيسبوك </a>
+          target="_blank" style="color:#000000; font-weight:bold; text-decoration:none;"> رابط المنشور على فيسبوك </a>
       </div>
     </div>
   </div> <!-- Footer Bar -->

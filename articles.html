@@ -79,31 +79,37 @@
             color: #ffffff;
         }
 
-        /* Mobile screens */
-        @media screen and (max-width: 600px) {
-            .fb-posts-container {
-                flex-direction: column;
-                align-items: center;
-            }
+      /* Mobile screens */
+@media screen and (max-width: 600px) {
+    .fb-posts-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-            footer {
-                flex-direction: column;
-                gap: 4px;
-                font-size: 14px;
-                padding: 6px 0;
-            }
+    .fb-post-wrapper iframe {
+        width: 90%;        /* scale to 90% of screen width */
+        height: auto;      /* height adjusts automatically */
+        min-height: 300px; /* ensures iframe is not too short */
+    }
 
-            footer span {
-                display: flex;
-                align-items: center;
-                gap: 6px;
-            }
+    footer {
+        flex-direction: column;
+        gap: 4px;
+        font-size: 14px;
+        padding: 6px 0;
+    }
 
-            footer img {
-                width: 18px !important;
-                vertical-align: middle;
-            }
-        }
+    footer span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    footer img {
+        width: 18px !important;
+        vertical-align: middle;
+    }
+}
     </style>
 </head>
 

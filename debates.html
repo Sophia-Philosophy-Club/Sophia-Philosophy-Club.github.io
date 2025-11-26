@@ -92,26 +92,30 @@
                 align-items: center;
             }
 
+            .fb-post-wrapper iframe {
+                width: 90%;
+                /* scale down to 90% of screen width */
+                min-height: 400px;
+                /* adjust height to keep proportion */
+            }
+
             footer {
                 flex-direction: column;
                 gap: 4px;
-                /* smaller spacing between items */
                 font-size: 14px;
                 /* smaller text */
                 padding: 6px 0;
-                /* smaller height */
             }
 
             footer span {
                 display: flex;
                 align-items: center;
-                gap: 6px;
-                /* smaller gap between icon and text */
+                gap: 5px;
+                /* smaller gap */
             }
 
             footer img {
                 width: 18px !important;
-                /* smaller icons */
                 vertical-align: middle;
             }
         }

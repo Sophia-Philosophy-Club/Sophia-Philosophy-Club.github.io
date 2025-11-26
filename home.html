@@ -420,63 +420,65 @@
       }
     }
 
-    /* MOBILE-FRIENDLY ADJUSTMENTS - ULTRA COMPACT + SLIGHTLY LARGER */
+    /* MOBILE-FRIENDLY ADJUSTMENTS - FOOTER SMALLER, OTHER STUFF SLIGHTLY BIGGER */
     @media screen and (max-width: 768px) {
 
       html,
       body {
-        font-size: 12px;
-        /* slightly larger than ultra small */
+        font-size: 13px;
+        /* slightly bigger overall text */
       }
 
       .logo {
-        width: 90px;
+        width: 100px;
         /* slightly bigger logo */
-        margin-top: 2vh;
+        margin-top: 2.5vh;
       }
 
       .logo-text {
-        font-size: 11px;
+        font-size: 12px;
         /* slightly bigger paragraph text */
-        line-height: 1.1;
-        margin-top: 1vh;
-        padding: 0 4px;
+        line-height: 1.2;
+        margin-top: 1.5vh;
+        padding: 0 5px;
         max-width: 90%;
       }
 
       .neon-buttons {
         flex-direction: column;
-        gap: 8px;
+        gap: 10px;
         /* slightly bigger gap between buttons */
-        margin-top: 2vh;
+        margin-top: 3vh;
         align-items: center;
       }
 
       .neon-buttons a {
-        padding: 8px 12px;
+        padding: 10px 14px;
         /* slightly bigger button padding */
-        font-size: 11px;
+        font-size: 12px;
         /* slightly bigger button text */
-        letter-spacing: 0.8px;
-        min-width: 100px;
+        letter-spacing: 1px;
+        min-width: 110px;
       }
 
       svg {
-        height: 30vh;
+        height: 32vh;
         /* slightly taller background */
       }
 
       footer {
         flex-direction: column;
-        gap: 3px;
-        font-size: 10px;
-        /* slightly bigger footer text */
-        padding: 5px 3vw;
+        gap: 2px;
+        /* smaller spacing for footer */
+        font-size: 9px;
+        /* smaller footer text */
+        padding: 4px 3vw;
+        /* smaller footer padding */
       }
 
       footer img {
-        width: 12px;
-        /* slightly bigger icons */
+        width: 10px;
+        /* smaller icons */
       }
     }
   </style>
@@ -578,6 +580,10 @@
 
   <!-- Footer Bar -->
   <footer>
+    <span>
+      <img src="images/mail.png" alt="Email" style="width:20px; vertical-align:middle; margin-right:5px;">
+      <a href="mailto:sophia.club2020@gmail.com">sophia.club2020@gmail.com</a>
+    </span>
 
     <span>
       <img src="images/facebook.png" alt="Facebook" style="width:26px; vertical-align:middle; margin-right:5px;">
@@ -588,10 +594,7 @@
       <a href="https://www.instagram.com/sophiaphilosophy/?hl=fr" target="_blank">صفحة انستغرام</a>
     </span>
 
-    <span>
-      <img src="images/mail.png" alt="Email" style="width:20px; vertical-align:middle; margin-right:5px;">
-      <a href="mailto:sophia.club2020@gmail.com">sophia.club2020@gmail.com</a>
-    </span>
+
   </footer>
 
 

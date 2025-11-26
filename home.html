@@ -456,22 +456,23 @@
         height: 34vh;
       }
 
-      /* --- FOOTER CHANGES FOR MOBILE --- */
       footer {
         flex-direction: column;
+        justify-content: flex-start;
+        /* align items to the top-left */
         align-items: flex-start;
-        /* ← ALIGN LEFT */
+        /* ← LEFT ALIGN */
         text-align: left;
-        /* ← ENSURE LEFT TEXT */
-        gap: 0;
+        /* ensure text is left */
+        gap: 4px;
         font-size: 10px;
-        padding: 3px 4vw;
-        /* more side padding for left alignment */
+        padding: 5px 10px;
+        /* push content slightly from the left */
       }
 
       footer img {
         width: 12px;
-        /* ← SMALLER ICONS */
+        /* even smaller icons */
         height: auto;
         vertical-align: middle;
         margin-right: 5px;

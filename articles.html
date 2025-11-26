@@ -66,26 +66,25 @@ footer a:hover {
 
 /* Mobile screens */
 @media screen and (max-width: 600px) {
-  .fb-post-wrapper iframe {
-    width: 100% !important;
-  }
 
   footer {
     flex-direction: column;
-    gap: 4px;           /* smaller spacing between items */
-    font-size: 14px;    /* smaller text */
-    padding: 6px 0;     /* smaller height */
+    gap: 2px;           /* minimal spacing */
+    font-size: 12px;    /* smaller text */
+    line-height: 1.2;   /* tighter line height */
+    padding: 4px 5px;   /* very small padding */
   }
 
   footer span {
     display: flex;
     align-items: center;
-    gap: 6px;           /* smaller gap between icon and text */
+    gap: 4px;           /* smaller gap between icon and text */
   }
 
   footer img {
-    width: 18px !important; /* smaller icons */
+    width: 16px !important; /* smaller icons */
     vertical-align: middle;
+    margin: 0;               /* remove extra margin */
   }
 }
 

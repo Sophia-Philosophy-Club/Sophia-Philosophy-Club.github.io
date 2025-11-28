@@ -56,12 +56,31 @@
             box-sizing: border-box;
         }
 
-        /* Desktop iframe size */
-        .fb-post-wrapper iframe {
+        /* Desktop iframe/video size */
+        .fb-post-wrapper iframe,
+        .fb-post-wrapper video {
             width: 100%;
             height: auto;
             min-height: 600px;
             border-radius: 5px;
+            pointer-events: auto;
+            touch-action: pan-y;
+            /* allows vertical scrolling on mobile */
+        }
+
+        /* Video description inside wrapper */
+        .video-description {
+            margin: 12px auto 0 auto;
+            background: #f7f7f7;
+            padding: 12px;
+            border-radius: 5px;
+            line-height: 1.6;
+            font-size: 16px;
+            color: #000;
+            text-align: right;
+            width: 95%;
+            max-width: 95%;
+            box-sizing: border-box;
         }
 
         footer {
@@ -102,14 +121,27 @@
             }
 
             .fb-post-wrapper {
-                width: 92%;
-                max-width: 92%;
+                width: 95vw;
+                /* use viewport width */
+                max-width: 95vw;
             }
 
-            .fb-post-wrapper iframe {
+            .fb-post-wrapper iframe,
+            .fb-post-wrapper video {
                 width: 100%;
                 height: auto;
-                min-height: 300px;
+                min-height: 360px;
+                /* slightly taller for comfort */
+                pointer-events: auto;
+                touch-action: pan-y;
+                /* vertical scrolling works */
+            }
+
+            .video-description {
+                width: 90%;
+                max-width: 90%;
+                font-size: 15px;
+                margin: 12px auto 0 auto;
             }
 
             footer {

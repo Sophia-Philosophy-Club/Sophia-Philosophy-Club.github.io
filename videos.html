@@ -128,28 +128,32 @@
         padding: 0 5px;
       }
 
-      /* Limit wrapper width dynamically */
+      /* Wrapper scales with viewport width */
       .fb-post-wrapper {
         width: 95vw;
-        /* 👈 use viewport width instead of fixed 88% */
         max-width: 95vw;
-        /* prevent overflow */
+        box-sizing: border-box;
       }
 
+      /* Video / iframe slightly taller than before, scaling naturally */
       .fb-post-wrapper iframe,
       .fb-post-wrapper video {
         width: 100%;
         height: auto;
-        min-height: auto;
-        /* let it scale naturally */
+        min-height: 350px;
+        /* slightly taller than before */
         max-width: 100%;
+        border-radius: 5px;
       }
 
+      /* Video description inside wrapper width */
       .video-description {
-        width: 95vw;
-        max-width: 95vw;
+        width: 90%;
+        /* slightly smaller than wrapper to fit nicely */
+        max-width: 90%;
         font-size: 15px;
         margin: 12px auto 0 auto;
+        box-sizing: border-box;
       }
 
       footer {

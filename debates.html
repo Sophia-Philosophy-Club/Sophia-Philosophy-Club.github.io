@@ -34,28 +34,30 @@
             justify-content: center;
             gap: 20px;
             margin: 40px 0;
+            width: 100%;
         }
 
-        /* White container for Facebook post */
+        /* White wrapper around each post */
         .fb-post-wrapper {
             background: white;
             padding: 10px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            /* 🔥 slightly narrower */
+            width: 100%;
         }
 
-        /* Make iframes smaller for side by side layout */
-        /* Desktop iframe size */
-        .fb-post-wrapper iframe {
-            width: 500px;
-            /* increase from 400px to 500px */
+        /* Desktop iframe/video size (fills wrapper) */
+        .fb-post-wrapper iframe,
+        .fb-post-wrapper video {
+            width: 100%;
             height: auto;
-            /* let height adjust automatically */
             min-height: 600px;
-            /* ensure it's not too short */
+            border-radius: 5px;
         }
 
-
+        /* Footer */
         footer {
             position: fixed;
             bottom: 0;
@@ -84,34 +86,47 @@
             color: #ffffff;
         }
 
+        /* ───────────────────────────────────────────
+       Tablets (max 900px)
+    ─────────────────────────────────────────── */
+        @media screen and (max-width: 900px) {
+            .fb-post-wrapper {
+                max-width: 90%;
+                /* scales nicely on tablets */
+            }
 
-        /* Mobile screens */
+            .fb-post-wrapper iframe,
+            .fb-post-wrapper video {
+                min-height: 500px;
+            }
+        }
+
+        /* ───────────────────────────────────────────
+       Mobile phones (max 600px)
+    ─────────────────────────────────────────── */
         @media screen and (max-width: 600px) {
             .fb-posts-container {
                 flex-direction: column;
                 align-items: center;
             }
 
-            .fb-post-wrapper iframe {
-                width: 90%;
-                /* scale down to 90% of screen width */
+            .fb-post-wrapper {
+                width: 92%;
+                max-width: 92%;
+            }
+
+            .fb-post-wrapper iframe,
+            .fb-post-wrapper video {
+                width: 100%;
+                height: auto;
                 min-height: 400px;
-                /* adjust height to keep proportion */
             }
 
             footer {
                 flex-direction: column;
                 gap: 4px;
                 font-size: 14px;
-                /* smaller text */
                 padding: 6px 0;
-            }
-
-            footer span {
-                display: flex;
-                align-items: center;
-                gap: 5px;
-                /* smaller gap */
             }
 
             footer img {
@@ -120,6 +135,7 @@
             }
         }
     </style>
+
 </head>
 <header>تفاصيل مناقشات نادي صوفيا للفلسف</header>
 

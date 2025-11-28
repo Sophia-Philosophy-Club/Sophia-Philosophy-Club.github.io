@@ -55,7 +55,6 @@
       max-width: 560px;
       height: auto;
       aspect-ratio: 560/429;
-      /* preserves FB ratio automatically */
       border-radius: 5px;
     }
 
@@ -71,10 +70,8 @@
       text-align: right;
       width: 100%;
       max-width: 400px;
-      /* reduced from 520px */
       box-sizing: border-box;
     }
-
 
     footer {
       position: fixed;
@@ -105,27 +102,34 @@
     }
 
     /* ───────────────────────────────────────────
-   Medium screens (max 900px)
-─────────────────────────────────────────── */
-    @media screen and (max-width: 900px) {
+     TABLETS (600px–900px)
+     Full dynamic scaling for iPads & tablets
+  ─────────────────────────────────────────── */
+    @media screen and (max-width: 900px) and (min-width: 601px) {
       .fb-post-wrapper {
-        max-width: 480px;
+        width: 90%;
+        max-width: 600px;
       }
 
       .fb-post-wrapper iframe,
       .fb-post-wrapper video {
         width: 100%;
+        max-width: 600px;
         height: auto;
         min-height: 500px;
-        /* Adjusted for medium screens */
         aspect-ratio: auto;
+      }
+
+      .video-description {
+        max-width: 500px;
+        font-size: 16px;
       }
     }
 
     /* ───────────────────────────────────────────
-   Mobile screens (max 600px)
-   FULL DYNAMIC RESPONSIVE MODE
-─────────────────────────────────────────── */
+     MOBILE (max 600px)
+     FULL DYNAMIC RESPONSIVE MODE
+  ─────────────────────────────────────────── */
     @media screen and (max-width: 600px) {
       .fb-posts-container {
         flex-direction: column;
@@ -143,9 +147,7 @@
         max-width: 100%;
         height: auto;
         min-height: 300px;
-        /* 🔥 SAME AS FIRST PAGE */
         aspect-ratio: auto;
-        /* prevents forced 16:9 */
       }
 
       .video-description {
@@ -167,7 +169,6 @@
       }
     }
   </style>
-
 </head>
 
 <body>

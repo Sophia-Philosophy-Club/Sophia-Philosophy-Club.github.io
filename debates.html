@@ -6,9 +6,12 @@
     <title>تفاصيل المناقشات - Sophia Philosophy Club</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* Prevent horizontal scroll */
+        html,
         body {
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
             font-family: "Arial", sans-serif;
             background-color: #222222;
             color: #FFD120;
@@ -16,6 +19,7 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            box-sizing: border-box;
         }
 
         header {
@@ -35,6 +39,9 @@
             gap: 20px;
             margin: 40px 0;
             width: 100%;
+            box-sizing: border-box;
+            padding: 0 10px;
+            /* small padding to prevent overflow on small screens */
         }
 
         /* White wrapper around each post */
@@ -43,9 +50,10 @@
             padding: 10px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
-            /* 🔥 slightly narrower */
+            max-width: 580px;
+            /* slightly wider on desktop */
             width: 100%;
+            box-sizing: border-box;
         }
 
         /* Desktop iframe/video size (fills wrapper) */
@@ -86,13 +94,10 @@
             color: #ffffff;
         }
 
-        /* ───────────────────────────────────────────
-       Tablets (max 900px)
-    ─────────────────────────────────────────── */
+        /* Tablets (max 900px) */
         @media screen and (max-width: 900px) {
             .fb-post-wrapper {
                 max-width: 90%;
-                /* scales nicely on tablets */
             }
 
             .fb-post-wrapper iframe,
@@ -101,9 +106,7 @@
             }
         }
 
-        /* ───────────────────────────────────────────
-       Mobile phones (max 600px)
-    ─────────────────────────────────────────── */
+        /* Mobile phones (max 600px) */
         @media screen and (max-width: 600px) {
             .fb-posts-container {
                 flex-direction: column;
@@ -135,6 +138,7 @@
             }
         }
     </style>
+
 
 </head>
 <header>تفاصيل مناقشات نادي صوفيا للفلسف</header>

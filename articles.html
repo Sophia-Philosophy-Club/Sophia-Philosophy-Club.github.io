@@ -649,14 +649,17 @@
     <!-- Lazy-loading script -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const posts = document.querySelectorAll(".fb-post-wrapper iframe");
+            const wrappers = document.querySelectorAll(".fb-post-wrapper");
 
+            // IntersectionObserver for lazy-loading iframes
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        const iframe = entry.target;
-                        iframe.src = iframe.dataset.src;
-                        observer.unobserve(iframe);
+                        const iframe = entry.target.querySelector("iframe");
+                        if (iframe && !iframe.src) {
+                            iframe.src = iframe.dataset.src;
+                        }
+                        observer.unobserve(entry.target); // stop observing once loaded
                     }
                 });
             }, {
@@ -664,11 +667,23 @@
                 threshold: 0.1
             });
 
-            posts.forEach(iframe => {
-                observer.observe(iframe);
+            wrappers.forEach(wrapper => {
+                // Observe each wrapper for lazy-loading
+                observer.observe(wrapper);
+
+                // Enable iframe interaction on touch (mobile)
+                wrapper.addEventListener("touchstart", () => {
+                    wrapper.classList.add("active");
+                });
+
+                // Optional: enable interaction on click for desktop
+                wrapper.addEventListener("click", () => {
+                    wrapper.classList.add("active");
+                });
             });
         });
     </script>
+
 </body>
 
 </html>

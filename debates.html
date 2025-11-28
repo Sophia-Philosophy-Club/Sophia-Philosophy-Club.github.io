@@ -5,143 +5,167 @@
     <meta charset="UTF-8">
     <title>تفاصيل المناقشات - Sophia Philosophy Club</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Prevent horizontal scroll */
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            font-family: "Arial", sans-serif;
-            background-color: #222222;
-            color: #FFD120;
-            display: flex;
+  <style>
+    /* Prevent horizontal scroll */
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: "Arial", sans-serif;
+        background-color: #222222;
+        color: #FFD120;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    header {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        background-color: rgba(60, 60, 60, 0.7);
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    /* Container for all Facebook posts */
+    .fb-posts-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin: 40px 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 10px;
+    }
+
+    /* White wrapper around each post */
+    .fb-post-wrapper {
+        background: white;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        max-width: 580px;
+        box-sizing: border-box;
+    }
+
+    /* Make iframe/video fill wrapper dynamically */
+    .fb-post-wrapper iframe,
+    .fb-post-wrapper video {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9; /* keeps a consistent ratio based on wrapper width */
+        min-height: 600px;
+        border-radius: 5px;
+        pointer-events: auto;
+        touch-action: pan-y;
+    }
+
+    /* Video description inside wrapper */
+    .video-description {
+        margin: 12px auto 0 auto;
+        background: #f7f7f7;
+        padding: 12px;
+        border-radius: 5px;
+        line-height: 1.6;
+        font-size: 16px;
+        color: #000;
+        text-align: right;
+        width: 95%;
+        max-width: 95%;
+        box-sizing: border-box;
+    }
+
+    /* Footer */
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(60, 60, 60, 0.6);
+        color: #FFD120;
+        font-size: 18px;
+        line-height: 1.6;
+        padding: 15px 0;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        z-index: 20;
+        backdrop-filter: blur(5px);
+    }
+
+    footer a {
+        color: #FFD120;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    footer a:hover {
+        color: #ffffff;
+    }
+
+    /* Tablets (max 900px) */
+    @media screen and (max-width: 900px) {
+        .fb-post-wrapper {
+            max-width: 90%;
+        }
+
+        .fb-post-wrapper iframe,
+        .fb-post-wrapper video {
+            min-height: 500px;
+        }
+    }
+
+    /* Mobile phones (max 600px) */
+    @media screen and (max-width: 600px) {
+        .fb-posts-container {
             flex-direction: column;
             align-items: center;
-            min-height: 100vh;
-            box-sizing: border-box;
+            padding: 0 5px;
         }
 
-        header {
-            width: 100%;
-            padding: 20px;
-            text-align: center;
-            background-color: rgba(60, 60, 60, 0.7);
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        /* Container for all Facebook posts */
-        .fb-posts-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin: 40px 0;
-            width: 100%;
-            box-sizing: border-box;
-            padding: 0 10px;
-            /* small padding to prevent overflow on small screens */
-        }
-
-        /* White wrapper around each post */
         .fb-post-wrapper {
-            background: white;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            max-width: 580px;
-            /* slightly wider on desktop */
-            width: 100%;
-            box-sizing: border-box;
+            width: 95vw;
+            max-width: 95vw;
         }
 
-        /* Desktop iframe/video size (fills wrapper) */
         .fb-post-wrapper iframe,
         .fb-post-wrapper video {
             width: 100%;
             height: auto;
-            min-height: 600px;
-            border-radius: 5px;
+            min-height: 360px;
         }
 
-        /* Footer */
+        .video-description {
+            width: 90%;
+            max-width: 90%;
+            font-size: 15px;
+        }
+
         footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(60, 60, 60, 0.6);
-            color: #FFD120;
-            font-size: 18px;
-            line-height: 1.6;
-            padding: 15px 0;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            z-index: 20;
-            backdrop-filter: blur(5px);
+            flex-direction: column;
+            gap: 4px;
+            font-size: 14px;
+            padding: 6px 0;
         }
 
-        footer a {
-            color: #FFD120;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
+        footer img {
+            width: 18px !important;
+            vertical-align: middle;
         }
+    }
+</style>
 
-        footer a:hover {
-            color: #ffffff;
-        }
-
-        /* Tablets (max 900px) */
-        @media screen and (max-width: 900px) {
-            .fb-post-wrapper {
-                max-width: 90%;
-            }
-
-            .fb-post-wrapper iframe,
-            .fb-post-wrapper video {
-                min-height: 500px;
-            }
-        }
-
-        /* Mobile phones (max 600px) */
-        @media screen and (max-width: 600px) {
-            .fb-posts-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .fb-post-wrapper {
-                width: 92%;
-                max-width: 92%;
-            }
-
-            .fb-post-wrapper iframe,
-            .fb-post-wrapper video {
-                width: 100%;
-                height: auto;
-                min-height: 400px;
-            }
-
-            footer {
-                flex-direction: column;
-                gap: 4px;
-                font-size: 14px;
-                padding: 6px 0;
-            }
-
-            footer img {
-                width: 18px !important;
-                vertical-align: middle;
-            }
-        }
-    </style>
 
 
 </head>
-<header>تفاصيل مناقشات نادي صوفيا للفلسف</header>
+<header>تفاصيل مناقشات نادي صوفيا للفلسفة</header>
 
 <body>
     <div class="fb-posts-container">

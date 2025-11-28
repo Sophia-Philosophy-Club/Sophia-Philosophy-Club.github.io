@@ -105,8 +105,8 @@
     }
 
     /* ───────────────────────────────────────────
-     Medium screens (max 900px)
-  ─────────────────────────────────────────── */
+   Medium screens (max 900px)
+─────────────────────────────────────────── */
     @media screen and (max-width: 900px) {
       .fb-post-wrapper {
         max-width: 480px;
@@ -114,14 +114,18 @@
 
       .fb-post-wrapper iframe,
       .fb-post-wrapper video {
-        aspect-ratio: 16/9;
+        width: 100%;
+        height: auto;
+        min-height: 500px;
+        /* Adjusted for medium screens */
+        aspect-ratio: auto;
       }
     }
 
     /* ───────────────────────────────────────────
-     Mobile screens (max 600px)
-     FULL DYNAMIC RESPONSIVE MODE
-  ─────────────────────────────────────────── */
+   Mobile screens (max 600px)
+   FULL DYNAMIC RESPONSIVE MODE
+─────────────────────────────────────────── */
     @media screen and (max-width: 600px) {
       .fb-posts-container {
         flex-direction: column;
@@ -137,8 +141,11 @@
       .fb-post-wrapper video {
         width: 100%;
         max-width: 100%;
-        aspect-ratio: 16/9;
         height: auto;
+        min-height: 300px;
+        /* 🔥 SAME AS FIRST PAGE */
+        aspect-ratio: auto;
+        /* prevents forced 16:9 */
       }
 
       .video-description {

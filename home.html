@@ -30,6 +30,23 @@
       position: relative;
     }
 
+    /* --- TOP LEFT BUG / DEBUG BOX --- */
+    #top-left-bug {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      color: #FFD120;
+      font-size: 14px;
+      z-index: 50;
+      display: flex;
+      gap: 6px;
+    }
+
+    #bug-msg {
+      font-size: 12px;
+    }
+
+    /* --- SPEECH BUBBLES --- */
     .speech-bubble {
       position: relative;
       background: #222222;
@@ -54,6 +71,7 @@
       border-color: transparent #222222 transparent transparent;
     }
 
+    /* --- CONTAINER --- */
     .container {
       position: relative;
       height: 100%;
@@ -498,9 +516,20 @@
         vertical-align: middle;
         margin-right: 5px;
       }
+
+      /* --- TOP LEFT BUG FIX --- */
+      #top-left-bug {
+        top: 5px;
+        left: 5px;
+        font-size: 12px;
+        gap: 4px;
+      }
+
+      #bug-msg {
+        font-size: 11px;
+      }
     }
   </style>
-
 
 </head>
 

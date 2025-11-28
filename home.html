@@ -30,6 +30,30 @@
       position: relative;
     }
 
+    .speech-bubble {
+      position: relative;
+      background: #222222;
+      color: #FFD120;
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -6px;
+      transform: translateY(-50%);
+      border-width: 6px;
+      border-style: solid;
+      border-color: transparent #222222 transparent transparent;
+    }
+
     .container {
       position: relative;
       height: 100%;
@@ -485,6 +509,27 @@
 </head>
 
 <body>
+  <!-- Top-left GitHub + bug message -->
+  <div id="top-left-bug"
+    style="position:fixed; top:10px; left:10px; z-index:30; display:flex; align-items:center; gap:8px; font-size:14px; color:#FFD120; cursor:pointer;">
+
+    <a href="https://github.com/Sophia-Philosophy-Club/Sophia-Philosophy-Club.github.io" target="_blank"
+      style="display:flex; align-items:center; text-decoration:none; color:#FFD120; gap:8px;">
+
+      <!-- Circular greyish background for bug icon -->
+      <div
+        style="width:32px; height:32px; background:rgba(128,128,128,0.4); border-radius:50%; display:flex; justify-content:center; align-items:center;">
+        <img src="images/bug.png" alt="GitHub" style="width:18px; height:18px;">
+      </div>
+
+      <!-- Arabic text with proper RTL direction -->
+      <span id="bug-msg" style="opacity:0; transition:opacity 0.3s; direction:rtl; unicode-bidi:plaintext;">
+        أبلغ عن أي مشكلة!
+      </span>
+    </a>
+  </div>
+
+
   <div class="container">
     <!-- SVG background -->
     <svg id="lines" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="none">
@@ -595,6 +640,31 @@
 
   </footer>
 
+  <!-- Top-left GitHub + bug message script -->
+  <script>
+    const messages = [
+      "واجهت خطأ؟ أرسل لنا تقريرًا!",
+      "ساعدنا في تحسين الموقع عبر الإبلاغ عن الأخطاء!",
+      "لاحظت خللًا؟ لا تتردد بالإبلاغ!"
+    ];
+
+    const bugMsg = document.getElementById("bug-msg");
+    let index = 0;
+
+    function showMessage() {
+      bugMsg.textContent = messages[index];
+      bugMsg.style.opacity = 1;
+
+      setTimeout(() => {
+        bugMsg.style.opacity = 0;
+        index = (index + 1) % messages.length;
+      }, 2500); // message visible for 2.5 seconds
+    }
+
+    // Repeat every 3 seconds
+    showMessage();
+    setInterval(showMessage, 3000);
+  </script>
 
 
   <script>

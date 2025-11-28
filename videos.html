@@ -128,24 +128,26 @@
         padding: 0 5px;
       }
 
-      /* Narrower wrapper to prevent zoomed-in feel */
+      /* Limit wrapper width dynamically */
       .fb-post-wrapper {
-        width: 88%;
-        max-width: 88%;
+        width: 95vw;
+        /* 👈 use viewport width instead of fixed 88% */
+        max-width: 95vw;
+        /* prevent overflow */
       }
 
       .fb-post-wrapper iframe,
       .fb-post-wrapper video {
         width: 100%;
         height: auto;
-        min-height: 300px;
+        min-height: auto;
+        /* let it scale naturally */
         max-width: 100%;
       }
 
-      /* Make description adapt dynamically to wrapper */
       .video-description {
-        width: 90%;
-        max-width: 90%;
+        width: 95vw;
+        max-width: 95vw;
         font-size: 15px;
         margin: 12px auto 0 auto;
       }

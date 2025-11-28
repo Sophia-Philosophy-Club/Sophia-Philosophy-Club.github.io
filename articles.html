@@ -52,8 +52,11 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
             width: 100%;
             max-width: 580px;
-            /* slightly wider on desktop */
             box-sizing: border-box;
+
+            position: relative;
+            /* required for pointer-events trick */
+            overflow: hidden;
         }
 
         /* Desktop iframe/video size */
@@ -63,9 +66,16 @@
             height: auto;
             min-height: 600px;
             border-radius: 5px;
-            pointer-events: auto;
+
+            pointer-events: none;
+            /* disabled by default */
             touch-action: pan-y;
             /* allows vertical scrolling on mobile */
+        }
+
+        /* Enable iframe interaction when tapped */
+        .fb-post-wrapper.active iframe {
+            pointer-events: auto;
         }
 
         /* Video description inside wrapper */
@@ -117,12 +127,10 @@
                 flex-direction: column;
                 align-items: center;
                 padding: 0 5px;
-                /* ensure content stays inside viewport */
             }
 
             .fb-post-wrapper {
                 width: 95vw;
-                /* use viewport width */
                 max-width: 95vw;
             }
 
@@ -131,10 +139,14 @@
                 width: 100%;
                 height: auto;
                 min-height: 360px;
-                /* slightly taller for comfort */
-                pointer-events: auto;
+                pointer-events: none;
+                /* still disabled by default on mobile */
                 touch-action: pan-y;
-                /* vertical scrolling works */
+            }
+
+            .fb-post-wrapper.active iframe {
+                pointer-events: auto;
+                /* enabled on tap */
             }
 
             .video-description {

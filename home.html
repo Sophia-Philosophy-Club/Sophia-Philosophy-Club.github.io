@@ -511,19 +511,20 @@
 <body>
   <!-- Top-left GitHub + bug message -->
   <div id="top-left-bug"
-    style="position:fixed; top:10px; left:10px; z-index:30; display:flex; align-items:center; gap:8px; font-size:14px; color:#FFD120; cursor:pointer;">
+    style="position:fixed; top:12px; left:12px; z-index:9999; display:flex; align-items:center; gap:8px; font-size:14px; color:#FFD120; cursor:pointer; pointer-events:auto;">
 
     <a href="https://github.com/Sophia-Philosophy-Club/Sophia-Philosophy-Club.github.io" target="_blank"
-      style="display:flex; align-items:center; text-decoration:none; color:#FFD120; gap:8px;">
+      style="display:flex; align-items:center; text-decoration:none; color:#FFD120; gap:6px;">
 
       <!-- Circular greyish background for bug icon -->
       <div
-        style="width:32px; height:32px; background:rgba(128,128,128,0.4); border-radius:50%; display:flex; justify-content:center; align-items:center;">
-        <img src="images/bug.png" alt="GitHub" style="width:18px; height:18px;">
+        style="width:36px; height:36px; background:rgba(128,128,128,0.4); border-radius:50%; display:flex; justify-content:center; align-items:center; flex-shrink:0;">
+        <img src="images/bug.png" alt="GitHub" style="width:20px; height:20px;">
       </div>
 
       <!-- Arabic text with proper RTL direction -->
-      <span id="bug-msg" style="opacity:0; transition:opacity 0.3s; direction:rtl; unicode-bidi:plaintext;">
+      <span id="bug-msg"
+        style="opacity:0; transition:opacity 0.4s; direction:rtl; unicode-bidi:plaintext; white-space:nowrap;">
         أبلغ عن أي مشكلة!
       </span>
     </a>

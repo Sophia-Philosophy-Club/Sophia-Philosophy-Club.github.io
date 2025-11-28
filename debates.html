@@ -5,162 +5,163 @@
     <meta charset="UTF-8">
     <title>تفاصيل المناقشات - Sophia Philosophy Club</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* Prevent horizontal scroll */
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-        font-family: "Arial", sans-serif;
-        background-color: #222222;
-        color: #FFD120;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 100vh;
-        box-sizing: border-box;
-    }
-
-    header {
-        width: 100%;
-        padding: 20px;
-        text-align: center;
-        background-color: rgba(60, 60, 60, 0.7);
-        font-size: 24px;
-        font-weight: bold;
-    }
-
-    /* Container for all Facebook posts */
-    .fb-posts-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        margin: 40px 0;
-        width: 100%;
-        box-sizing: border-box;
-        padding: 0 10px;
-    }
-
-    /* White wrapper around each post */
-    .fb-post-wrapper {
-        background: white;
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-        width: 100%;
-        max-width: 580px;
-        box-sizing: border-box;
-    }
-
-    /* Make iframe/video fill wrapper dynamically */
-    .fb-post-wrapper iframe,
-    .fb-post-wrapper video {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9; /* keeps a consistent ratio based on wrapper width */
-        min-height: 600px;
-        border-radius: 5px;
-        pointer-events: auto;
-        touch-action: pan-y;
-    }
-
-    /* Video description inside wrapper */
-    .video-description {
-        margin: 12px auto 0 auto;
-        background: #f7f7f7;
-        padding: 12px;
-        border-radius: 5px;
-        line-height: 1.6;
-        font-size: 16px;
-        color: #000;
-        text-align: right;
-        width: 95%;
-        max-width: 95%;
-        box-sizing: border-box;
-    }
-
-    /* Footer */
-    footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: rgba(60, 60, 60, 0.6);
-        color: #FFD120;
-        font-size: 18px;
-        line-height: 1.6;
-        padding: 15px 0;
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        z-index: 20;
-        backdrop-filter: blur(5px);
-    }
-
-    footer a {
-        color: #FFD120;
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s;
-    }
-
-    footer a:hover {
-        color: #ffffff;
-    }
-
-    /* Tablets (max 900px) */
-    @media screen and (max-width: 900px) {
-        .fb-post-wrapper {
-            max-width: 90%;
-        }
-
-        .fb-post-wrapper iframe,
-        .fb-post-wrapper video {
-            min-height: 500px;
-        }
-    }
-
-    /* Mobile phones (max 600px) */
-    @media screen and (max-width: 600px) {
-        .fb-posts-container {
+    <style>
+        /* Prevent horizontal scroll */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: "Arial", sans-serif;
+            background-color: #222222;
+            color: #FFD120;
+            display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 0 5px;
+            min-height: 100vh;
+            box-sizing: border-box;
         }
 
+        header {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(60, 60, 60, 0.7);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Container for all Facebook posts */
+        .fb-posts-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0 10px;
+        }
+
+        /* White wrapper around each post */
         .fb-post-wrapper {
-            width: 95vw;
-            max-width: 95vw;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 580px;
+            box-sizing: border-box;
         }
 
+        /* Make iframe/video fill wrapper dynamically */
         .fb-post-wrapper iframe,
         .fb-post-wrapper video {
             width: 100%;
             height: auto;
-            min-height: 360px;
+            aspect-ratio: 16 / 9;
+            /* keeps a consistent ratio based on wrapper width */
+            min-height: 600px;
+            border-radius: 5px;
+            pointer-events: auto;
+            touch-action: pan-y;
         }
 
+        /* Video description inside wrapper */
         .video-description {
-            width: 90%;
-            max-width: 90%;
-            font-size: 15px;
+            margin: 12px auto 0 auto;
+            background: #f7f7f7;
+            padding: 12px;
+            border-radius: 5px;
+            line-height: 1.6;
+            font-size: 16px;
+            color: #000;
+            text-align: right;
+            width: 95%;
+            max-width: 95%;
+            box-sizing: border-box;
         }
 
+        /* Footer */
         footer {
-            flex-direction: column;
-            gap: 4px;
-            font-size: 14px;
-            padding: 6px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(60, 60, 60, 0.6);
+            color: #FFD120;
+            font-size: 18px;
+            line-height: 1.6;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            z-index: 20;
+            backdrop-filter: blur(5px);
         }
 
-        footer img {
-            width: 18px !important;
-            vertical-align: middle;
+        footer a {
+            color: #FFD120;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
         }
-    }
-</style>
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        /* Tablets (max 900px) */
+        @media screen and (max-width: 900px) {
+            .fb-post-wrapper {
+                max-width: 90%;
+            }
+
+            .fb-post-wrapper iframe,
+            .fb-post-wrapper video {
+                min-height: 500px;
+            }
+        }
+
+        /* Mobile phones (max 600px) */
+        @media screen and (max-width: 600px) {
+            .fb-posts-container {
+                flex-direction: column;
+                align-items: center;
+                padding: 0 5px;
+            }
+
+            .fb-post-wrapper {
+                width: 95vw;
+                max-width: 95vw;
+            }
+
+            .fb-post-wrapper iframe,
+            .fb-post-wrapper video {
+                width: 100%;
+                height: auto;
+                min-height: 360px;
+            }
+
+            .video-description {
+                width: 90%;
+                max-width: 90%;
+                font-size: 15px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 4px;
+                font-size: 14px;
+                padding: 6px 0;
+            }
+
+            footer img {
+                width: 18px !important;
+                vertical-align: middle;
+            }
+        }
+    </style>
 
 
 
@@ -170,16 +171,16 @@
 <body>
     <div class="fb-posts-container">
         <div class="fb-post-wrapper"> <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ZbfGtyG7x58bGWmTnoerNNbG1xdTDC4v3CrWtx7V9R6apXHVcb2YcoKzsniNjkevl%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ZbfGtyG7x58bGWmTnoerNNbG1xdTDC4v3CrWtx7V9R6apXHVcb2YcoKzsniNjkevl%26id%3D100063707634531&show_text=true&width=500"
                 style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"> </iframe> </div>
         <div class="fb-post-wrapper"> <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Z8uTaYFVvxQKyVU77jVjZg5N4YFcnBb4QPK63W3xEGLeaBZNXEdnxjm8FPFGmyfNl%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Z8uTaYFVvxQKyVU77jVjZg5N4YFcnBb4QPK63W3xEGLeaBZNXEdnxjm8FPFGmyfNl%26id%3D100063707634531&show_text=true&width=500"
                 style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"> </iframe> </div>
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02jPzRt8BUs5CpVAt8gNtBKh7BPToed6ocBoDCJMwKt4Sk4X7JDViXHAYrF7UBeyppl%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02jPzRt8BUs5CpVAt8gNtBKh7BPToed6ocBoDCJMwKt4Sk4X7JDViXHAYrF7UBeyppl%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="761" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -187,21 +188,21 @@
 
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid05Y71JJdDZxLjDamWn5i5Z5RxEb1FuaGNGvvaXygpdpS1yJfjysUuupduTMyhS2iVl%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid05Y71JJdDZxLjDamWn5i5Z5RxEb1FuaGNGvvaXygpdpS1yJfjysUuupduTMyhS2iVl%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="741" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ndcY75BBxytWP4oPazGezsSn61z8tYBwn7k3Bdc2Qx5aMVZDoeFgTnpjxdq2ZtAsl%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ndcY75BBxytWP4oPazGezsSn61z8tYBwn7k3Bdc2Qx5aMVZDoeFgTnpjxdq2ZtAsl%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="658" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02Ka3dsZmMH4aqy8mfkspSbTov9yddBzTFvf4HdyGDy6xGe8g3row2MYu6vwTm3NpDl%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02Ka3dsZmMH4aqy8mfkspSbTov9yddBzTFvf4HdyGDy6xGe8g3row2MYu6vwTm3NpDl%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="767" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -209,7 +210,7 @@
 
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02Ka3dsZmMH4aqy8mfkspSbTov9yddBzTFvf4HdyGDy6xGe8g3row2MYu6vwTm3NpDl%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02Ka3dsZmMH4aqy8mfkspSbTov9yddBzTFvf4HdyGDy6xGe8g3row2MYu6vwTm3NpDl%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="767" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -217,7 +218,7 @@
 
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02244he9TzerVwMWtMkCMCdasTXgTS71yuNuTgU5ZP86VSiyR56hUGCFSxnRK6sVZJl%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02244he9TzerVwMWtMkCMCdasTXgTS71yuNuTgU5ZP86VSiyR56hUGCFSxnRK6sVZJl%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="747" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -225,7 +226,7 @@
 
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid04h4xRJkQjKwUtyH3yp5HYnhf1oqyR8JLLHdqJHUa6NHHxBCzWScyx2q63h1TW5AAl%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid04h4xRJkQjKwUtyH3yp5HYnhf1oqyR8JLLHdqJHUa6NHHxBCzWScyx2q63h1TW5AAl%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="767" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -233,7 +234,7 @@
 
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0oY9N91k3nGTNmwW7WNFxjaBJuh9y6o3eZv2urss9TSa4zboi3EBfPpXRSDyewYwUl%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0oY9N91k3nGTNmwW7WNFxjaBJuh9y6o3eZv2urss9TSa4zboi3EBfPpXRSDyewYwUl%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="741" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -241,7 +242,7 @@
 
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0xQR3mNnmUR2bJaVALJNTxfYKBt3wLpqwQqrciWybqrEShyXeSchUzVKXrNbL7YaJl%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0xQR3mNnmUR2bJaVALJNTxfYKBt3wLpqwQqrciWybqrEShyXeSchUzVKXrNbL7YaJl%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="588" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -249,7 +250,7 @@
 
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0416eK8Wtx3kPnHpPHXj1QiyUp4pQm8iNCKiPxkZJACKUG7SMWDHKSVJz7FpPBM6fl%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0416eK8Wtx3kPnHpPHXj1QiyUp4pQm8iNCKiPxkZJACKUG7SMWDHKSVJz7FpPBM6fl%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="767" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -257,7 +258,7 @@
 
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02Ugx6o5wsNLk2MQPqFRr9irUAEcehKpe2Lr2eUAdh3wqwgMEk7nizBHgxtj89x1C2l%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02Ugx6o5wsNLk2MQPqFRr9irUAEcehKpe2Lr2eUAdh3wqwgMEk7nizBHgxtj89x1C2l%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="646" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -265,14 +266,14 @@
 
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0enD4iQUFw9D7TDjyMA88F2U62XUGNhVrudjYBAmi53iGTw7vTGBk8wee3d9tNBXpl%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0enD4iQUFw9D7TDjyMA88F2U62XUGNhVrudjYBAmi53iGTw7vTGBk8wee3d9tNBXpl%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="715" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02yFzi6AYHX9BQwnt5YsDWj5FqpY3gk2RRPVm1D8TrWeYHpf1CBxaY7VrtdsiazBuCl%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02yFzi6AYHX9BQwnt5YsDWj5FqpY3gk2RRPVm1D8TrWeYHpf1CBxaY7VrtdsiazBuCl%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="684" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -280,7 +281,7 @@
 
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02P4uidgwd5f2zvvrp6pSFGVffCD6YkeH7JTNZ8HudLaJMNjz5Wd8xSwFvMZ2in9ql%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02P4uidgwd5f2zvvrp6pSFGVffCD6YkeH7JTNZ8HudLaJMNjz5Wd8xSwFvMZ2in9ql%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="734" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -288,35 +289,35 @@
 
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0iQcCtWiyok1XqJXUif8ooCUPxLBcxkWqtttXXdTANEoYTXTniMJUDFfugBAyCWTl%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0iQcCtWiyok1XqJXUif8ooCUPxLBcxkWqtttXXdTANEoYTXTniMJUDFfugBAyCWTl%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="773" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02BS3FxQAK2N5yRzpfE9sLocsx3PEFZc8E6D1zgp3aNa4jBE2h3Vun2KJzgtCnRPT7l%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02BS3FxQAK2N5yRzpfE9sLocsx3PEFZc8E6D1zgp3aNa4jBE2h3Vun2KJzgtCnRPT7l%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="664" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02aXW447z7UULwmuP6PW3vevGxt4soFERAfXSpGdycr555vnirwo7W3yoyk6opb4knl%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02aXW447z7UULwmuP6PW3vevGxt4soFERAfXSpGdycr555vnirwo7W3yoyk6opb4knl%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="773" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02YVZA4UWcg6mAPaY7QKJrDV3K1GAuVkGCKj8m3eRHbcRtm3zGhxAyaT7pgGs5kh65l%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02YVZA4UWcg6mAPaY7QKJrDV3K1GAuVkGCKj8m3eRHbcRtm3zGhxAyaT7pgGs5kh65l%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="634" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0X1VsszgNZ6nXYciQSmLDgU79dYbjKAZefa6qjCZoDQTt3TixQTkbBXk7qPe5miy2l%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0X1VsszgNZ6nXYciQSmLDgU79dYbjKAZefa6qjCZoDQTt3TixQTkbBXk7qPe5miy2l%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="780" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -324,7 +325,7 @@
 
         <div class="fb-post-wrapper">
             <iframe
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0V9vhpNGN7BSziionw2CFeTynihExVgs4XZtZoG3KcZxiAXaUf7K67gMGDNeqTp2Zl%26id%3D100063707634531&show_text=true&width=500"
+                data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0V9vhpNGN7BSziionw2CFeTynihExVgs4XZtZoG3KcZxiAXaUf7K67gMGDNeqTp2Zl%26id%3D100063707634531&show_text=true&width=500"
                 width="500" height="780" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -339,6 +340,45 @@
                 style="width:28px; vertical-align:middle; margin-right:5px;"> <a
                 href="https://www.instagram.com/sophiaphilosophy/?hl=fr" target="_blank">صفحة انستغرام</a> </span>
     </footer>
+
+    <!-- Lazy-loading script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const wrappers = document.querySelectorAll(".fb-post-wrapper");
+
+            // IntersectionObserver for lazy-loading iframes
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const iframe = entry.target.querySelector("iframe");
+                        if (iframe && !iframe.src) {
+                            iframe.src = iframe.dataset.src;
+                        }
+                        observer.unobserve(entry.target); // stop observing once loaded
+                    }
+                });
+            }, {
+                rootMargin: "200px 0px",
+                threshold: 0.1
+            });
+
+            wrappers.forEach(wrapper => {
+                // Observe each wrapper for lazy-loading
+                observer.observe(wrapper);
+
+                // Enable iframe interaction on touch (mobile)
+                wrapper.addEventListener("touchstart", () => {
+                    wrapper.classList.add("active");
+                });
+
+                // Optional: enable interaction on click for desktop
+                wrapper.addEventListener("click", () => {
+                    wrapper.classList.add("active");
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>

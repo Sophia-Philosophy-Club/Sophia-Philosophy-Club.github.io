@@ -49,7 +49,7 @@
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
       width: 100%;
       max-width: 580px;
-      /* slightly wider on desktop */
+      /* desktop width */
       box-sizing: border-box;
     }
 
@@ -103,6 +103,7 @@
       color: #ffffff;
     }
 
+    /* Tablets */
     @media screen and (max-width: 900px) and (min-width: 601px) {
       .fb-post-wrapper {
         width: 90%;
@@ -119,15 +120,18 @@
       }
     }
 
+    /* Mobile */
     @media screen and (max-width: 600px) {
       .fb-posts-container {
         flex-direction: column;
         align-items: center;
+        padding: 0 5px;
       }
 
+      /* Narrower wrapper to prevent zoomed-in feel */
       .fb-post-wrapper {
-        width: 92%;
-        max-width: 92%;
+        width: 88%;
+        max-width: 88%;
       }
 
       .fb-post-wrapper iframe,
@@ -136,13 +140,14 @@
         height: auto;
         min-height: 300px;
         max-width: 100%;
-        /* remove fixed aspect-ratio constraints */
       }
 
+      /* Make description adapt dynamically to wrapper */
       .video-description {
-        width: 100%;
-        max-width: 100%;
+        width: 90%;
+        max-width: 90%;
         font-size: 15px;
+        margin: 12px auto 0 auto;
       }
 
       footer {

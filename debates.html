@@ -341,20 +341,39 @@
                 href="https://www.instagram.com/sophiaphilosophy/?hl=fr" target="_blank">صفحة انستغرام</a> </span>
     </footer>
 
-    <!-- Lazy-loading script -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const wrappers = document.querySelectorAll(".fb-post-wrapper");
 
             // IntersectionObserver for lazy-loading iframes
-            const observer = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
+                    const wrapper = entry.target;
+                    const iframe = wrapper.querySelector("iframe");
+
+                    if (!iframe) return;
+
                     if (entry.isIntersecting) {
-                        const iframe = entry.target.querySelector("iframe");
-                        if (iframe && !iframe.src) {
+                        // LOAD iframe
+                        if (!iframe.src) {
                             iframe.src = iframe.dataset.src;
                         }
-                        observer.unobserve(entry.target); // stop observing once loaded
+                    } else {
+                        // UNLOAD iframe by replacing it with a fresh iframe
+                        if (iframe.src) {
+                            const newIframe = document.createElement("iframe");
+                            newIframe.dataset.src = iframe.dataset.src;
+                            newIframe.width = iframe.width;
+                            newIframe.height = iframe.height;
+                            newIframe.style = iframe.style.cssText;
+                            newIframe.scrolling = iframe.scrolling;
+                            newIframe.frameBorder = iframe.frameBorder;
+                            newIframe.allowFullscreen = true;
+                            newIframe.setAttribute("allow", "autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share");
+
+                            // Replace old iframe
+                            iframe.replaceWith(newIframe);
+                        }
                     }
                 });
             }, {

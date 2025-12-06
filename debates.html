@@ -359,16 +359,24 @@
                             iframe.src = iframe.dataset.src;
                         }
                     } else {
-                        // UNLOAD iframe by replacing it with a fresh iframe
+                        // UNLOAD iframe by replacing it safely
                         if (iframe.src) {
                             const newIframe = document.createElement("iframe");
+
+                            // Copy dataset.src
                             newIframe.dataset.src = iframe.dataset.src;
-                            newIframe.width = iframe.width;
-                            newIframe.height = iframe.height;
-                            newIframe.style = iframe.style.cssText;
-                            newIframe.scrolling = iframe.scrolling;
-                            newIframe.frameBorder = iframe.frameBorder;
-                            newIframe.allowFullscreen = true;
+
+                            // Copy attributes safely
+                            ["width", "height", "scrolling", "frameborder"].forEach(attr => {
+                                const val = iframe.getAttribute(attr);
+                                if (val !== null) newIframe.setAttribute(attr, val);
+                            });
+
+                            // Copy style
+                            newIframe.style.cssText = iframe.style.cssText;
+
+                            // Allow attributes
+                            newIframe.setAttribute("allowfullscreen", "true");
                             newIframe.setAttribute("allow", "autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share");
 
                             // Replace old iframe
@@ -397,6 +405,7 @@
             });
         });
     </script>
+
 
 </body>
 

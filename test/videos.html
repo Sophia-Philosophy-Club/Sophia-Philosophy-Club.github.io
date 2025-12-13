@@ -196,7 +196,7 @@
       position: fixed;
       top: 10px;
       left: 10px;
-      background: rgba(255, 209, 32, 0.95);
+      background: rgba(255, 140, 32, 0.95);
       color: #222;
       font-size: 14px;
       font-weight: bold;
@@ -211,7 +211,7 @@
 
     .video-notice .reload-btn {
       background: #222;
-      color: #FFD120;
+      color: #ff9b20;
       border: none;
       padding: 4px 8px;
       border-radius: 4px;
@@ -222,6 +222,16 @@
 
     .video-notice .reload-btn:hover {
       background: #444;
+    }
+
+    /* Mobile only */
+    @media (max-width: 768px) {
+      .video-notice {
+        top: 60px;
+        /* move it down on mobile */
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   </style>
 

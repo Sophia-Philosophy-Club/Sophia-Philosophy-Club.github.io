@@ -10,11 +10,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>نادي صوفيا الفلسفي - الصفحة الرئيسية</title>
+  <title>نادي صوفيا للفلسفة - الصفحة الرئيسية</title>
 
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
   <style>
+    @font-face {
+      font-family: 'Taro';
+      src: url('fonts/alfont_com_taro.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+
+
     /* --- GLOBAL STYLES --- */
     html,
     body {
@@ -123,7 +132,11 @@
       pointer-events: none;
       text-align: center;
       direction: rtl;
+
+      /* Apply your custom font */
+      font-family: 'Taro', Arial, sans-serif;
     }
+
 
     /* --- FOOTER --- */
     footer {
@@ -640,6 +653,18 @@
     #top-left-bug:hover img {
       filter: drop-shadow(0 0 6px rgba(255, 209, 32, 0.7));
     }
+
+    .neon-blue,
+    .neon-red,
+    .neon-yellow,
+    .neon-green {
+      font-family: 'Taro', Arial, sans-serif;
+    }
+
+    /* Apply Taro font only to Arabic footer links */
+    footer a.arabic {
+      font-family: 'Taro', Arial, sans-serif;
+    }
   </style>
 
 </head>
@@ -743,7 +768,7 @@
 
     <!-- Text under logo -->
     <div class="logo-text">
-      إذا كنت تبحث عن مساحة للتفكير الحر والنقاش العميق والتأمل في الأفكار والفلسفة،
+      إذا كنت تبحث عن مساحة للتفكير الحر و النقاش العميق والتأمل في الأفكار والفلسفة،
       فهذا المكان مخصص للحوار الصادق، حيث يمكن لكل شخص التعبير عن أفكاره بحرية والاستماع للآخرين باحترام.
     </div>
     <div class="neon-buttons">
@@ -751,12 +776,12 @@
       <!-- Blue Videos Button -->
       <a href="videos.html" class="neon-blue">
         <span></span><span></span><span></span><span></span>
-        الفيديوهات والوسائط </a>
+        الفيديوهات و الوسائط </a>
 
       <!-- Red Debate Button -->
       <a href="debates.html" class="neon-red">
         <span></span><span></span><span></span><span></span>
-        المناقشات والمحادثات
+        المناقشات و المحادثات
       </a>
 
       <!-- Yellow Articles Button -->
@@ -768,7 +793,7 @@
       <!-- Green Guests & Members Button -->
       <a href="guests.html" class="neon-green">
         <span></span><span></span><span></span><span></span>
-        الضيوف والأعضاء
+        الضيوف و الأعضاء
       </a>
 
 
@@ -776,7 +801,6 @@
 
 
   </div>
-
   <!-- Footer Bar -->
   <footer>
     <span>
@@ -786,15 +810,14 @@
 
     <span>
       <img src="images/facebook.png" alt="Facebook" style="width:26px; vertical-align:middle; margin-right:5px;">
-      <a href="https://www.facebook.com/profile.php?id=100063707634531" target="_blank">صفحة فيسبوك</a>
+      <a href="https://www.facebook.com/profile.php?id=100063707634531" target="_blank" class="arabic">صفحة فيسبوك</a>
     </span>
     <span>
       <img src="images/instagram.png" alt="Instagram" style="width:28px; vertical-align:middle; margin-right:5px;">
-      <a href="https://www.instagram.com/sophiaphilosophy/?hl=fr" target="_blank">صفحة انستغرام</a>
+      <a href="https://www.instagram.com/sophiaphilosophy/?hl=fr" target="_blank" class="arabic">صفحة انستغرام</a>
     </span>
-
-
   </footer>
+
 
   <!-- Top-left GitHub + bug message script -->
   <script>

@@ -227,12 +227,13 @@
     /* Mobile only */
     @media (max-width: 768px) {
       .video-notice {
-        top: 60px;
-        /* only move it down */
-        left: 10px;
-        /* keep same horizontal position */
+        top: 30vh;
+        /* responsive vertical offset */
+        left: 2.5vw;
+        /* slight responsiveness horizontally */
         transform: none;
-        /* prevent width shrink */
+        max-width: 95vw;
+        /* prevents overflow on very small screens */
       }
     }
   </style>

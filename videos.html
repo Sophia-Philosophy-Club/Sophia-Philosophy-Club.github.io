@@ -224,25 +224,29 @@
       background: #444;
     }
 
-    /* Move notice down on mobile screens */
+    /* Mobile adjustments */
     @media screen and (max-width: 600px) {
       .video-notice {
         top: auto;
-        bottom: 80px;
-        /* adjust distance from bottom */
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 13px;
-        padding: 6px 10px;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        transform: none;
+        font-size: 4%;
+        padding: 3% 5%;
         flex-direction: column;
         text-align: center;
+        border-radius: 0;
       }
 
       .video-notice .reload-btn {
-        margin-top: 5px;
+        margin-top: 2%;
+        width: 90%;
+        max-width: 90%;
       }
     }
   </style>
+
 
   <header>فيديوهات و وسائط نادي صوفيا للفلسفة</header>
   <div class="fb-posts-container"> <!-- First video (Facebook) -->

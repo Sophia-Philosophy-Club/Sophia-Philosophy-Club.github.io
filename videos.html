@@ -223,6 +223,25 @@
     .video-notice .reload-btn:hover {
       background: #444;
     }
+
+    /* Move notice down on mobile screens */
+    @media screen and (max-width: 600px) {
+      .video-notice {
+        top: auto;
+        bottom: 80px;
+        /* adjust distance from bottom */
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 13px;
+        padding: 6px 10px;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .video-notice .reload-btn {
+        margin-top: 5px;
+      }
+    }
   </style>
 
   <header>فيديوهات و وسائط نادي صوفيا للفلسفة</header>

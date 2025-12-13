@@ -529,6 +529,10 @@
         font-size: 11px;
       }
     }
+
+    #top-left-bug:hover img {
+      filter: drop-shadow(0 0 6px rgba(255, 209, 32, 0.7));
+    }
   </style>
 
 </head>
@@ -540,7 +544,7 @@
 
     <a href="https://github.com/Sophia-Philosophy-Club" target="_blank"
       style="display:flex; align-items:center; text-decoration:none; color:#FFD120; gap:6px;">
- 
+
       <!-- Circular greyish background for bug icon -->
       <div
         style="width:36px; height:36px; background:rgba(128,128,128,0.4); border-radius:50%; display:flex; justify-content:center; align-items:center; flex-shrink:0;">
@@ -554,7 +558,19 @@
       </span>
     </a>
   </div>
+  <script>
+    const bugBox = document.getElementById("top-left-bug");
 
+    bugBox.addEventListener("mouseenter", () => {
+      gsap.to(bugBox, {
+        x: 3,
+        duration: 0.15,
+        yoyo: true,
+        repeat: 3,
+        ease: "power1.inOut"
+      });
+    });
+  </script>
 
   <div class="container">
     <!-- SVG background -->

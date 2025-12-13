@@ -227,22 +227,27 @@
     /* Mobile adjustments */
     @media screen and (max-width: 600px) {
       .video-notice {
+        position: relative;
+        /* relative instead of fixed */
         top: auto;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        transform: none;
-        font-size: 4%;
-        padding: 3% 5%;
+        bottom: auto;
+        left: auto;
+        width: 95%;
+        margin: 1em auto 1em auto;
+        /* leave space above footer */
+        font-size: 1.1rem;
+        /* slightly bigger */
+        padding: 1em;
         flex-direction: column;
         text-align: center;
-        border-radius: 0;
+        border-radius: 0.5em;
       }
 
       .video-notice .reload-btn {
-        margin-top: 2%;
-        width: 90%;
-        max-width: 90%;
+        margin-top: 0.5em;
+        width: 80%;
+        /* full width with some margin */
+        max-width: 300px;
       }
     }
   </style>

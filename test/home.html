@@ -578,11 +578,19 @@
       }
 
       .neon-buttons {
-        flex-direction: column;
-        gap: 12px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2vh;
+        /* vertical + horizontal spacing */
         margin-top: 4vh;
-        align-items: center;
+        margin-bottom: 12vh;
+        /* keeps safe distance from footer */
+        width: 90vw;
+        /* adapts to screen width */
+        max-width: 360px;
+        /* optional safety cap */
       }
+
 
       .neon-buttons a {
         padding: 12px 16px;

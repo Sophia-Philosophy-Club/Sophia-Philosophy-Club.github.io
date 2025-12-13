@@ -461,6 +461,101 @@
       }
     }
 
+
+    /* --- GREEN NEON BUTTON --- */
+    .neon-green {
+      color: #00ff9c;
+    }
+
+    .neon-green:hover {
+      background: #00ff9c;
+      color: #050801;
+      box-shadow: 0 0 5px #00ff9c,
+        0 0 25px #00ff9c,
+        0 0 50px #00ff9c,
+        0 0 200px #00ff9c;
+    }
+
+    .neon-green span:nth-child(1) {
+      background: linear-gradient(90deg, transparent, #00ff9c);
+      animation: nb1-green 1s linear infinite;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+    }
+
+    .neon-green span:nth-child(2) {
+      background: linear-gradient(180deg, transparent, #00ff9c);
+      animation: nb2-green 1s linear infinite 0.25s;
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+    }
+
+    .neon-green span:nth-child(3) {
+      background: linear-gradient(270deg, transparent, #00ff9c);
+      animation: nb3-green 1s linear infinite 0.5s;
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+    }
+
+    .neon-green span:nth-child(4) {
+      background: linear-gradient(360deg, transparent, #00ff9c);
+      animation: nb4-green 1s linear infinite 0.75s;
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+    }
+
+    @keyframes nb1-green {
+      0% {
+        left: -100%;
+      }
+
+      50%,
+      100% {
+        left: 100%;
+      }
+    }
+
+    @keyframes nb2-green {
+      0% {
+        top: -100%;
+      }
+
+      50%,
+      100% {
+        top: 100%;
+      }
+    }
+
+    @keyframes nb3-green {
+      0% {
+        right: -100%;
+      }
+
+      50%,
+      100% {
+        right: 100%;
+      }
+    }
+
+    @keyframes nb4-green {
+      0% {
+        bottom: -100%;
+      }
+
+      50%,
+      100% {
+        bottom: 100%;
+      }
+    }
+
     /* --- RESPONSIVE / MOBILE ADJUSTMENTS --- */
     @media screen and (max-width: 768px) {
 
@@ -657,6 +752,13 @@
         <span></span><span></span><span></span><span></span>
         المقالات
       </a>
+
+      <!-- Green Guests & Members Button -->
+      <a href="guests.html" class="neon-green">
+        <span></span><span></span><span></span><span></span>
+        الضيوف والأعضاء
+      </a>
+
 
     </div>
 

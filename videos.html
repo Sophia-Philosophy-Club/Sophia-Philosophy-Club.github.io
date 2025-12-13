@@ -60,8 +60,8 @@
     .fb-post-wrapper video {
       width: 100%;
       height: auto;
-      min-height: 600px;
-      /* desktop height */
+      min-height: 70vh;
+      /* relative to viewport height */
       border-radius: 5px;
       pointer-events: auto;
       touch-action: pan-y;
@@ -121,7 +121,8 @@
 
       .fb-post-wrapper iframe,
       .fb-post-wrapper video {
-        min-height: 500px;
+        min-height: 45vh;
+        /* smaller for tablets */
       }
     }
 
@@ -142,7 +143,8 @@
       .fb-post-wrapper video {
         width: 100%;
         height: auto;
-        min-height: 360px;
+        min-height: 50vh;
+        /* smaller for mobile */
       }
 
       .video-description {
@@ -164,6 +166,8 @@
       }
     }
   </style>
+
+
 </head>
 
 <body>

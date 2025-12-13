@@ -59,11 +59,14 @@
         .fb-post-wrapper video {
             width: 100%;
             height: auto;
-            /* keeps a consistent ratio based on wrapper width */
-            min-height: 600px;
+            min-height: 80vh;
+            /* relative to viewport height */
+            max-height: 90vh;
+            /* prevents oversizing */
             border-radius: 5px;
             pointer-events: auto;
             touch-action: pan-y;
+            display: block;
         }
 
         /* Video description inside wrapper */
@@ -118,7 +121,9 @@
 
             .fb-post-wrapper iframe,
             .fb-post-wrapper video {
-                min-height: 500px;
+                min-height: 45vh;
+                /* smaller for tablets */
+                max-height: 80vh;
             }
         }
 
@@ -139,7 +144,9 @@
             .fb-post-wrapper video {
                 width: 100%;
                 height: auto;
-                min-height: 360px;
+                min-height: 65vh;
+                /* smaller for mobile */
+                max-height: 70vh;
             }
 
             .video-description {
@@ -161,7 +168,6 @@
             }
         }
     </style>
-
 
 
 </head>

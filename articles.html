@@ -53,7 +53,6 @@
             width: 100%;
             max-width: 580px;
             box-sizing: border-box;
-
             position: relative;
             /* required for pointer-events trick */
             overflow: hidden;
@@ -63,13 +62,15 @@
         .fb-post-wrapper video {
             width: 100%;
             height: auto;
-            min-height: 600px;
+            min-height: 80vh;
+            /* relative to viewport height */
+            max-height: 90vh;
+            /* prevents it from being too tall */
             border-radius: 5px;
-
             pointer-events: auto;
             touch-action: pan-y;
+            display: block;
         }
-
 
         /* Enable iframe interaction when tapped */
         .fb-post-wrapper.active iframe {
@@ -119,6 +120,20 @@
             color: #ffffff;
         }
 
+        /* Tablets */
+        @media screen and (max-width: 900px) {
+            .fb-post-wrapper {
+                max-width: 90%;
+            }
+
+            .fb-post-wrapper iframe,
+            .fb-post-wrapper video {
+                min-height: 45vh;
+                /* smaller for tablets */
+                max-height: 80vh;
+            }
+        }
+
         /* Mobile screens */
         @media screen and (max-width: 600px) {
             .fb-posts-container {
@@ -136,7 +151,9 @@
             .fb-post-wrapper video {
                 width: 100%;
                 height: auto;
-                min-height: 360px;
+                min-height: 65vh;
+                /* smaller for mobile */
+                max-height: 70vh;
                 pointer-events: none;
                 /* still disabled by default on mobile */
                 touch-action: pan-y;
@@ -173,6 +190,7 @@
             }
         }
     </style>
+
 
 </head>
 

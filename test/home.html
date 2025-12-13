@@ -578,25 +578,30 @@
       }
 
       .neon-buttons {
-        display: grid;
+        display: grid !important;
+        /* force grid instead of flex */
         grid-template-columns: repeat(2, 1fr);
-        gap: 2vh;
+        /* 2 buttons per row */
+        gap: 2vh 2vw;
         /* vertical + horizontal spacing */
         margin-top: 4vh;
         margin-bottom: 12vh;
-        /* keeps safe distance from footer */
         width: 90vw;
-        /* adapts to screen width */
         max-width: 360px;
-        /* optional safety cap */
+        justify-items: center;
+        /* center buttons horizontally */
+        align-items: center;
       }
 
-
       .neon-buttons a {
+        width: 100%;
+        /* fills the grid column */
+        max-width: 160px;
+        /* optional, avoid huge buttons */
         padding: 12px 16px;
         font-size: 13px;
         letter-spacing: 1px;
-        min-width: 130px;
+        box-sizing: border-box;
       }
 
       svg {

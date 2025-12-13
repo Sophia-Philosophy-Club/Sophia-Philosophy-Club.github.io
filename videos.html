@@ -185,10 +185,45 @@
 </head>
 
 <body>
-  <!-- Temporary notice -->
+  <!-- Temporary notice with reload button -->
   <div class="video-notice">
     إذا لم يبدأ الفيديو عند الضغط عليه، حاول إعادة تحميل الصفحة
+    <button onclick="location.reload();" class="reload-btn">إعادة التحميل</button>
   </div>
+
+  <style>
+    .video-notice {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background: rgba(255, 209, 32, 0.95);
+      color: #222;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 5px;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .video-notice .reload-btn {
+      background: #222;
+      color: #FFD120;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .video-notice .reload-btn:hover {
+      background: #444;
+    }
+  </style>
 
   <header>فيديوهات و وسائط نادي صوفيا للفلسفة</header>
   <div class="fb-posts-container"> <!-- First video (Facebook) -->

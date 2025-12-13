@@ -228,9 +228,11 @@
     @media (max-width: 768px) {
       .video-notice {
         top: 60px;
-        /* move it down on mobile */
-        left: 50%;
-        transform: translateX(-50%);
+        /* only move it down */
+        left: 10px;
+        /* keep same horizontal position */
+        transform: none;
+        /* prevent width shrink */
       }
     }
   </style>

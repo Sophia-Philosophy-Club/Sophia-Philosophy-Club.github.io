@@ -3,8 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title> فيديوهات و وسائط نادي صوفيا للفلسفة
-  </title>
+  <title>فيديوهات و وسائط نادي صوفيا للفلسفة</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     /* Prevent horizontal scroll */
@@ -30,6 +29,21 @@
       background-color: rgba(60, 60, 60, 0.7);
       font-size: 24px;
       font-weight: bold;
+    }
+
+    /* Temporary notice box */
+    .video-notice {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background: rgba(255, 209, 32, 0.9);
+      color: #222;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 5px;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     }
 
     /* Container for all posts/videos */
@@ -61,7 +75,6 @@
       width: 100%;
       height: auto;
       min-height: 70vh;
-      /* relative to viewport height */
       border-radius: 5px;
       pointer-events: auto;
       touch-action: pan-y;
@@ -122,7 +135,6 @@
       .fb-post-wrapper iframe,
       .fb-post-wrapper video {
         min-height: 45vh;
-        /* smaller for tablets */
       }
     }
 
@@ -144,7 +156,6 @@
         width: 100%;
         height: auto;
         min-height: 50vh;
-        /* smaller for mobile */
       }
 
       .video-description {
@@ -164,13 +175,21 @@
         width: 18px !important;
         vertical-align: middle;
       }
+
+      .video-notice {
+        font-size: 12px;
+        padding: 6px 10px;
+      }
     }
   </style>
-
-
 </head>
 
 <body>
+  <!-- Temporary notice -->
+  <div class="video-notice">
+    إذا لم يبدأ الفيديو عند الضغط عليه، حاول إعادة تحميل الصفحة
+  </div>
+
   <header>فيديوهات و وسائط نادي صوفيا للفلسفة</header>
   <div class="fb-posts-container"> <!-- First video (Facebook) -->
     <!-- First video (Facebook) -->

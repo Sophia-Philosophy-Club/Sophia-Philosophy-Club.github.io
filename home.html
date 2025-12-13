@@ -10,11 +10,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>نادي صوفيا الفلسفي - الصفحة الرئيسية</title>
+  <title>نادي صوفيا للفلسفة - الصفحة الرئيسية</title>
 
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
   <style>
+    @font-face {
+      font-family: 'Taro';
+      src: url('fonts/alfont_com_taro.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+
+
     /* --- GLOBAL STYLES --- */
     html,
     body {
@@ -44,7 +53,10 @@
 
     #bug-msg {
       font-size: 12px;
+      font-family: 'Taro', Arial, sans-serif;
+      /* Apply Taro font */
     }
+
 
     /* --- SPEECH BUBBLES --- */
     .speech-bubble {
@@ -123,7 +135,11 @@
       pointer-events: none;
       text-align: center;
       direction: rtl;
+
+      /* Apply your custom font */
+      font-family: 'Taro', Arial, sans-serif;
     }
+
 
     /* --- FOOTER --- */
     footer {
@@ -461,6 +477,101 @@
       }
     }
 
+
+    /* --- GREEN NEON BUTTON --- */
+    .neon-green {
+      color: #00ff9c;
+    }
+
+    .neon-green:hover {
+      background: #00ff9c;
+      color: #050801;
+      box-shadow: 0 0 5px #00ff9c,
+        0 0 25px #00ff9c,
+        0 0 50px #00ff9c,
+        0 0 200px #00ff9c;
+    }
+
+    .neon-green span:nth-child(1) {
+      background: linear-gradient(90deg, transparent, #00ff9c);
+      animation: nb1-green 1s linear infinite;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+    }
+
+    .neon-green span:nth-child(2) {
+      background: linear-gradient(180deg, transparent, #00ff9c);
+      animation: nb2-green 1s linear infinite 0.25s;
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+    }
+
+    .neon-green span:nth-child(3) {
+      background: linear-gradient(270deg, transparent, #00ff9c);
+      animation: nb3-green 1s linear infinite 0.5s;
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+    }
+
+    .neon-green span:nth-child(4) {
+      background: linear-gradient(360deg, transparent, #00ff9c);
+      animation: nb4-green 1s linear infinite 0.75s;
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+    }
+
+    @keyframes nb1-green {
+      0% {
+        left: -100%;
+      }
+
+      50%,
+      100% {
+        left: 100%;
+      }
+    }
+
+    @keyframes nb2-green {
+      0% {
+        top: -100%;
+      }
+
+      50%,
+      100% {
+        top: 100%;
+      }
+    }
+
+    @keyframes nb3-green {
+      0% {
+        right: -100%;
+      }
+
+      50%,
+      100% {
+        right: 100%;
+      }
+    }
+
+    @keyframes nb4-green {
+      0% {
+        bottom: -100%;
+      }
+
+      50%,
+      100% {
+        bottom: 100%;
+      }
+    }
+
     /* --- RESPONSIVE / MOBILE ADJUSTMENTS --- */
     @media screen and (max-width: 768px) {
 
@@ -480,20 +591,45 @@
         margin-top: 2.5vh;
         padding: 0 6px;
         max-width: 90%;
+        font-family: 'Taro', Arial, sans-serif;
       }
 
       .neon-buttons {
-        flex-direction: column;
-        gap: 12px;
-        margin-top: 4vh;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2vh 2vw;
+        width: 90%;
+        max-width: 360px;
+        justify-items: center;
         align-items: center;
+        margin: 4vh auto 12vh;
       }
 
       .neon-buttons a {
+        display: block;
+        width: 100%;
+        max-width: 160px;
         padding: 12px 16px;
         font-size: 13px;
-        letter-spacing: 1px;
-        min-width: 130px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+
+      /* --- Hide green button completely on mobile --- */
+      .neon-buttons a.neon-green {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      /* Adjust grid if only 3 buttons remain */
+      .neon-buttons a:not(.neon-green) {
+        grid-column: span 1;
       }
 
       svg {
@@ -527,11 +663,25 @@
 
       #bug-msg {
         font-size: 11px;
+        font-family: 'Taro', Arial, sans-serif !important;
       }
     }
 
+
     #top-left-bug:hover img {
       filter: drop-shadow(0 0 6px rgba(255, 209, 32, 0.7));
+    }
+
+    .neon-blue,
+    .neon-red,
+    .neon-yellow,
+    .neon-green {
+      font-family: 'Taro', Arial, sans-serif;
+    }
+
+    /* Apply Taro font only to Arabic footer links */
+    footer a.arabic {
+      font-family: 'Taro', Arial, sans-serif;
     }
   </style>
 
@@ -636,7 +786,7 @@
 
     <!-- Text under logo -->
     <div class="logo-text">
-      إذا كنت تبحث عن مساحة للتفكير الحر والنقاش العميق والتأمل في الأفكار والفلسفة،
+      إذا كنت تبحث عن مساحة للتفكير الحر و النقاش العميق والتأمل في الأفكار والفلسفة،
       فهذا المكان مخصص للحوار الصادق، حيث يمكن لكل شخص التعبير عن أفكاره بحرية والاستماع للآخرين باحترام.
     </div>
     <div class="neon-buttons">
@@ -644,12 +794,13 @@
       <!-- Blue Videos Button -->
       <a href="videos.html" class="neon-blue">
         <span></span><span></span><span></span><span></span>
-        الفيديوهات والوسائط </a>
+        الفيديوهات و الوسائط
+      </a>
 
       <!-- Red Debate Button -->
       <a href="debates.html" class="neon-red">
         <span></span><span></span><span></span><span></span>
-        المناقشات والمحادثات
+        المناقشات و المحادثات
       </a>
 
       <!-- Yellow Articles Button -->
@@ -658,11 +809,18 @@
         المقالات
       </a>
 
+      <!-- Green Guests & Members Button
+  <a href="guests.html" class="neon-green">
+    <span></span><span></span><span></span><span></span>
+    الضيوف و الأعضاء
+  </a>
+  -->
+
     </div>
 
 
-  </div>
 
+  </div>
   <!-- Footer Bar -->
   <footer>
     <span>
@@ -672,15 +830,14 @@
 
     <span>
       <img src="images/facebook.png" alt="Facebook" style="width:26px; vertical-align:middle; margin-right:5px;">
-      <a href="https://www.facebook.com/profile.php?id=100063707634531" target="_blank">صفحة فيسبوك</a>
+      <a href="https://www.facebook.com/profile.php?id=100063707634531" target="_blank" class="arabic">صفحة فيسبوك</a>
     </span>
     <span>
       <img src="images/instagram.png" alt="Instagram" style="width:28px; vertical-align:middle; margin-right:5px;">
-      <a href="https://www.instagram.com/sophiaphilosophy/?hl=fr" target="_blank">صفحة انستغرام</a>
+      <a href="https://www.instagram.com/sophiaphilosophy/?hl=fr" target="_blank" class="arabic">صفحة انستغرام</a>
     </span>
-
-
   </footer>
+
 
   <!-- Top-left GitHub + bug message script -->
   <script>

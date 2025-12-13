@@ -6,6 +6,13 @@
     <title>مقالات نادي صوفيا للفلسفة</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        @font-face {
+            font-family: 'Taro';
+            src: url('fonts/alfont_com_taro.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         /* Prevent horizontal scroll */
         html,
         body {
@@ -29,7 +36,11 @@
             background-color: rgba(60, 60, 60, 0.7);
             font-size: 24px;
             font-weight: bold;
+
+            /* Apply Taro font */
+            font-family: 'Taro', Arial, sans-serif;
         }
+
 
         /* Container for all Facebook posts */
         .fb-posts-container {
@@ -188,6 +199,10 @@
                 width: 18px !important;
                 vertical-align: middle;
             }
+        }
+
+        .arabic {
+            font-family: 'Taro', Arial, sans-serif;
         }
     </style>
 
@@ -628,14 +643,16 @@
         </span>
         <span>
             <img src="images/facebook.png" alt="Facebook" style="width:26px; vertical-align:middle; margin-right:5px;">
-            <a href="https://www.facebook.com/profile.php?id=100063707634531" target="_blank">صفحة فيسبوك</a>
+            <a href="https://www.facebook.com/profile.php?id=100063707634531" target="_blank" class="arabic">صفحة
+                فيسبوك</a>
         </span>
         <span>
             <img src="images/instagram.png" alt="Instagram"
                 style="width:28px; vertical-align:middle; margin-right:5px;">
-            <a href="https://www.instagram.com/sophiaphilosophy/?hl=fr" target="_blank">صفحة انستغرام</a>
+            <a href="https://www.instagram.com/sophiaphilosophy/?hl=fr" target="_blank" class="arabic">صفحة انستغرام</a>
         </span>
     </footer>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {

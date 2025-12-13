@@ -597,32 +597,39 @@
       .neon-buttons {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr);
-        /* 2 buttons per row */
         gap: 2vh 2vw;
         width: 90%;
         max-width: 360px;
         justify-items: center;
         align-items: center;
         margin: 4vh auto 12vh;
-        /* auto horizontal margin centers grid */
       }
 
       .neon-buttons a {
         display: block;
-        /* ensure grid items stretch properly */
         width: 100%;
-        /* fill the grid cell */
         max-width: 160px;
         padding: 12px 16px;
         font-size: 13px;
         text-align: center;
-        /* center text inside button */
         box-sizing: border-box;
       }
 
-      /* Hide green button on mobile */
+      /* --- Hide green button completely on mobile --- */
       .neon-buttons a.neon-green {
         display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      /* Adjust grid if only 3 buttons remain */
+      .neon-buttons a:not(.neon-green) {
+        grid-column: span 1;
       }
 
       svg {
@@ -659,6 +666,7 @@
         font-family: 'Taro', Arial, sans-serif !important;
       }
     }
+
 
     #top-left-bug:hover img {
       filter: drop-shadow(0 0 6px rgba(255, 209, 32, 0.7));

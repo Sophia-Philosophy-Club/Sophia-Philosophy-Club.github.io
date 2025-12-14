@@ -204,6 +204,40 @@
         .arabic {
             font-family: 'Taro', Arial, sans-serif;
         }
+
+        /* Adjust footer dynamically for short screens */
+        @media screen and (max-height: 600px) {
+            footer {
+                font-size: clamp(12px, 2vw, 14px);
+                /* smaller text on short screens */
+                padding: clamp(4px, 1.5vh, 6px) 0;
+                /* reduce vertical padding */
+                gap: clamp(2px, 1vw, 6px);
+                /* reduce space between items */
+            }
+
+            footer img {
+                width: clamp(14px, 3vw, 18px);
+                /* scale icons smaller */
+            }
+        }
+
+        /* Adjust footer dynamically for very short screens */
+        @media screen and (max-height: 400px) {
+            footer {
+                font-size: clamp(10px, 1.5vw, 12px);
+                /* even smaller text */
+                padding: clamp(2px, 1vh, 4px) 0;
+                /* minimal vertical padding */
+                gap: clamp(1px, 0.5vw, 3px);
+                /* minimal spacing */
+            }
+
+            footer img {
+                width: clamp(12px, 2.5vw, 14px);
+                /* smaller icons */
+            }
+        }
     </style>
 
 

@@ -37,35 +37,36 @@
       color: #FFD120;
       text-align: center;
       position: relative;
+      font-size: clamp(14px, 1.4vw, 18px);
     }
 
     /* --- TOP LEFT BUG / DEBUG BOX --- */
     #top-left-bug {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      color: #FFD120;
-      font-size: 14px;
-      z-index: 50;
-      display: flex;
-      gap: 6px;
+      top: clamp(0.6vh, 1vh, 1.5vh);
+      left: clamp(0.6vw, 1vw, 1.5vw);
+      font-size: clamp(11px, 1.2vw, 14px);
+      gap: clamp(4px, 0.8vw, 6px);
     }
 
     #bug-msg {
-      font-size: 12px;
+      font-size: clamp(10px, 1.1vw, 12px);
       font-family: 'Taro', Arial, sans-serif;
       /* Apply Taro font */
     }
 
 
-    /* --- SPEECH BUBBLES --- */
+    /* --- SPEECH BUBBLES (DYNAMIC) --- */
     .speech-bubble {
       position: relative;
       background: #222222;
       color: #FFD120;
-      padding: 6px 12px;
-      border-radius: 12px;
-      font-size: 14px;
+
+      padding: clamp(4px, 1vh, 8px) clamp(8px, 2vw, 14px);
+
+      border-radius: clamp(8px, 1.5vw, 14px);
+
+      font-size: clamp(12px, 1.6vw, 15px);
+
       opacity: 0;
       transition: opacity 0.5s ease-in-out;
       pointer-events: none;
@@ -75,30 +76,42 @@
     .speech-bubble::after {
       content: '';
       position: absolute;
+
       top: 50%;
-      left: -6px;
+      left: clamp(-10px, -1vw, -6px);
+      /* dynamic horizontal offset */
       transform: translateY(-50%);
-      border-width: 6px;
+
+      border-width: clamp(4px, 1vw, 6px);
+      /* scales arrow size */
       border-style: solid;
       border-color: transparent #222222 transparent transparent;
     }
 
-    /* --- CONTAINER --- */
+    /* --- CONTAINER (Dynamic) --- */
     .container {
       position: relative;
-      height: 100%;
-      width: 100%;
+      height: 100vh;
+      /* scales with viewport height */
+      width: 100vw;
+      /* scales with viewport width */
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      padding: clamp(0.5rem, 2vh, 2rem);
+      /* optional padding scales with screen */
+      box-sizing: border-box;
     }
+
 
     svg {
       position: absolute;
-      height: 100%;
-      width: 100%;
+      height: 100vh;
+      /* scales with viewport height */
+      width: 100vw;
+      /* scales with viewport width */
     }
 
     .lines {
@@ -117,31 +130,34 @@
       fill: #FFD120;
     }
 
+    /* --- LOGO (Dynamic, lower with more spacing) --- */
     .logo {
-      width: 200px;
+      width: clamp(120px, 15vw, 250px);
+      /* scales with viewport width */
       height: auto;
       z-index: 10;
       pointer-events: none;
-      margin-top: -25vh;
+      margin-top: -15vh;
+      /* slightly higher to give more space above */
     }
 
+    /* --- LOGO TEXT (Dynamic, more spacing above and below) --- */
     .logo-text {
-      margin-top: 40px;
-      max-width: 1300px;
-      font-size: 23px;
-      line-height: 1.6;
+      margin-top: 4vh;
+      /* more spacing from logo */
+      margin-bottom: 4vh;
+      /* adds spacing below text */
+      max-width: 90%;
+      font-size: clamp(14px, 2vw, 28px);
+      line-height: clamp(1.2, 1.4, 1.6);
       color: #FFD120;
       z-index: 10;
       pointer-events: none;
       text-align: center;
       direction: rtl;
-
-      /* Apply your custom font */
       font-family: 'Taro', Arial, sans-serif;
     }
 
-
-    /* --- FOOTER --- */
     footer {
       position: fixed;
       bottom: 0;
@@ -149,12 +165,15 @@
       width: 100%;
       background: rgba(60, 60, 60, 0.6);
       color: #FFD120;
-      font-size: 18px;
+      font-size: clamp(12px, 1.5vw, 18px);
+      /* scales with screen width */
       line-height: 1.6;
-      padding: 15px 0;
+      padding: clamp(10px, 1.5vh, 15px) 0;
+      /* scales with viewport height */
       display: flex;
       justify-content: center;
-      gap: 40px;
+      gap: clamp(10px, 4vw, 40px);
+      /* scales spacing */
       z-index: 20;
       backdrop-filter: blur(5px);
     }
@@ -170,30 +189,47 @@
       color: #ffffff;
     }
 
-    /* --- NEON BUTTONS AREA --- */
+    /* --- NEON BUTTONS AREA (RESPONSIVE) --- */
     .neon-buttons {
-      margin-top: 40px;
+      margin-top: 4vh;
+      /* scales with viewport height ✅ */
       display: flex;
-      gap: 30px;
+      gap: 2.5vw;
+      /* scales with viewport width ✅ */
       z-index: 10;
+      flex-wrap: wrap;
+      /* handles small screens ✅ */
+      justify-content: center;
     }
+
 
     .neon-buttons a {
       position: relative;
-      display: inline-block;
-      padding: 30px 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: clamp(12px, 2.5vh, 30px) clamp(18px, 4vw, 50px);
+      /* responsive padding ✅ */
+
       text-decoration: none;
       text-transform: uppercase;
       transition: 0.5s;
-      letter-spacing: 3px;
+      letter-spacing: clamp(1px, 0.3vw, 3px);
+      /* scales ✅ */
       overflow: hidden;
-      font-size: 22px;
+
+      font-size: clamp(14px, 2vw, 22px);
+      /* scales ✅ */
+      white-space: nowrap;
     }
+
 
     .neon-buttons a span {
       position: absolute;
       display: block;
     }
+
 
     /* --- BLUE NEON BUTTON --- */
     .neon-blue {
@@ -592,44 +628,33 @@
         padding: 0 6px;
         max-width: 90%;
         font-family: 'Taro', Arial, sans-serif;
+        /* Apply Taro font only here */
       }
 
       .neon-buttons {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr);
+        /* 2 buttons per row */
         gap: 2vh 2vw;
         width: 90%;
         max-width: 360px;
         justify-items: center;
         align-items: center;
         margin: 4vh auto 12vh;
+        /* auto horizontal margin centers grid */
       }
 
       .neon-buttons a {
         display: block;
+        /* ensure grid items stretch properly */
         width: 100%;
+        /* fill the grid cell */
         max-width: 160px;
         padding: 12px 16px;
         font-size: 13px;
         text-align: center;
+        /* center text inside button */
         box-sizing: border-box;
-      }
-
-      /* --- Hide green button completely on mobile --- */
-      .neon-buttons a.neon-green {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        pointer-events: none !important;
-        width: 0 !important;
-        height: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-
-      /* Adjust grid if only 3 buttons remain */
-      .neon-buttons a:not(.neon-green) {
-        grid-column: span 1;
       }
 
       svg {
@@ -664,9 +689,9 @@
       #bug-msg {
         font-size: 11px;
         font-family: 'Taro', Arial, sans-serif !important;
+        /* force it */
       }
     }
-
 
     #top-left-bug:hover img {
       filter: drop-shadow(0 0 6px rgba(255, 209, 32, 0.7));
@@ -682,6 +707,93 @@
     /* Apply Taro font only to Arabic footer links */
     footer a.arabic {
       font-family: 'Taro', Arial, sans-serif;
+    }
+
+
+    /* --- SMALL HEIGHT DEVICES (e.g., landscape phones) --- */
+    @media screen and (max-height: 420px) {
+
+      /* Reduce spacing above buttons */
+      .neon-buttons {
+        margin-top: 2vh !important;
+        gap: 1.5vw !important;
+      }
+
+      /* Reduce footer size */
+      footer {
+        font-size: 11px !important;
+        padding: 5px 0 !important;
+        gap: 10px !important;
+      }
+
+      /* Adjust logo placement */
+      .logo {
+        margin-top: -10vh !important;
+      }
+
+      /* Reduce space between logo and text */
+      .logo-text {
+        margin-top: 1vh !important;
+        margin-bottom: 2vh !important;
+        font-size: 12px !important;
+      }
+
+      /* Optional: shrink SVG height to avoid overflow */
+      svg {
+        height: 30vh !important;
+      }
+    }
+
+    /* --- ULTRA-SHORT LANDSCAPE PHONES --- */
+    @media screen and (max-height: 350px) {
+
+      html,
+      body {
+        font-size: 12px !important;
+        /* shrink base font size */
+      }
+
+      .logo {
+        width: 80px !important;
+        /* scale logo width */
+        margin-top: -6vh !important;
+        /* slightly higher */
+        height: auto !important;
+        /* maintain aspect ratio */
+      }
+
+      .logo-text {
+        font-size: 10px !important;
+        margin-top: 0.5vh !important;
+        margin-bottom: 1vh !important;
+      }
+
+      .neon-buttons {
+        margin-top: 1vh !important;
+        gap: 1vw !important;
+      }
+
+      .neon-buttons a {
+        font-size: 10px !important;
+        padding: 6px 10px !important;
+        /* smaller buttons */
+      }
+
+      footer {
+        font-size: 9px !important;
+        padding: 2px 0 !important;
+        gap: 4px !important;
+      }
+
+      svg {
+        height: 20vh !important;
+        /* shrink SVG graphics */
+      }
+    }
+
+    /* Hide the Guests & Members button */
+    .neon-buttons a.neon-green {
+      display: none !important;
     }
   </style>
 
@@ -794,8 +906,7 @@
       <!-- Blue Videos Button -->
       <a href="videos.html" class="neon-blue">
         <span></span><span></span><span></span><span></span>
-        الفيديوهات و الوسائط
-      </a>
+        الفيديوهات و الوسائط </a>
 
       <!-- Red Debate Button -->
       <a href="debates.html" class="neon-red">
@@ -809,15 +920,14 @@
         المقالات
       </a>
 
-      <!-- Green Guests & Members Button
-  <a href="guests.html" class="neon-green">
-    <span></span><span></span><span></span><span></span>
-    الضيوف و الأعضاء
-  </a>
-  -->
+      <!-- Green Guests & Members Button -->
+      <a href="guests.html" class="neon-green">
+        <span></span><span></span><span></span><span></span>
+        الضيوف و الأعضاء
+      </a>
+
 
     </div>
-
 
 
   </div>

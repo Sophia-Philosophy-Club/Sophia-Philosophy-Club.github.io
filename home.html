@@ -108,11 +108,11 @@
 
     svg {
       position: absolute;
-      height: 100vh;
-      /* scales with viewport height */
-      width: 100vw;
-      /* scales with viewport width */
+      inset: 0;
+      width: 100%;
+      height: 100%;
     }
+
 
     .lines {
       opacity: 0.05;
@@ -516,6 +516,8 @@
 
     /* --- GREEN NEON BUTTON --- */
     .neon-green {
+      display: none !important;
+
       color: #00ff9c;
     }
 
@@ -657,9 +659,7 @@
         box-sizing: border-box;
       }
 
-      svg {
-        height: 34vh;
-      }
+
 
       footer {
         flex-direction: column;
@@ -739,9 +739,7 @@
       }
 
       /* Optional: shrink SVG height to avoid overflow */
-      svg {
-        height: 30vh !important;
-      }
+
     }
 
     /* --- ULTRA-SHORT LANDSCAPE PHONES --- */
@@ -785,15 +783,6 @@
         gap: 4px !important;
       }
 
-      svg {
-        height: 20vh !important;
-        /* shrink SVG graphics */
-      }
-    }
-
-    /* Hide the Guests & Members button */
-    .neon-buttons a.neon-green {
-      display: none !important;
     }
   </style>
 
@@ -977,15 +966,22 @@
 
 
   <script>
-    // Animate lights up and down
-    function animateWithRandomNumber(selector, from, to) {
-      gsap.fromTo(selector, Math.random() * 20 + 1, { y: from }, {
-        y: to,
-        onComplete: animateWithRandomNumber,
-        onCompleteParams: [selector, from, to],
-        ease: "linear"
-      });
+    const SVG_HEIGHT = 1080;
+
+    function animateWithRandomNumber(myClass, from, to) {
+      TweenLite.fromTo(
+        myClass,
+        Math.floor(Math.random() * 20) + 1,
+        { y: from },
+        {
+          y: to,
+          onComplete: animateWithRandomNumber,
+          onCompleteParams: [myClass, from, to],
+          ease: Linear.easeNone
+        }
+      );
     }
+
 
     const itemsDown = [".light4", ".light5", ".light6", ".light7", ".light8", ".light11", ".light12", ".light13", ".light14", ".light15", ".light16"];
     itemsDown.forEach(e => animateWithRandomNumber(e, -1080, 1080));

@@ -289,6 +289,22 @@
             transform: translate(-50%, -50%);
         }
 
+        /* Remove the blue outline when clicking/tapping */
+        a,
+        button {
+            outline: none;
+            /* remove default outline */
+            -webkit-tap-highlight-color: transparent;
+            /* remove tap highlight on mobile */
+        }
+
+        /* Optional: remove focus shadow on your hover div */
+        .hover:focus,
+        .hover:active {
+            outline: none;
+            box-shadow: none;
+        }
+
         /* Tablets */
         @media screen and (max-width: 900px) {
 

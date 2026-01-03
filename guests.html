@@ -90,7 +90,7 @@
 
     .filter-slider-rect {
       height: 3rem;
-      width: 100%;
+      width: 50%;
       /* match the button width */
       border-radius: 0.8rem;
       background-color: #ffd700;
@@ -99,13 +99,6 @@
       transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out, width 0.4s ease-in-out;
     }
 
-
-    /* Make the "الأعضاء" button unclickable */
-    .filter-tabs li:nth-child(2) .filter-button {
-      pointer-events: none;
-      opacity: 0.6;
-      /* optional: make it look disabled */
-    }
 
     /* ------------------- GUEST SECTION ------------------- */
     .guests-section {
@@ -116,6 +109,56 @@
       justify-content: center;
       flex-wrap: wrap;
       align-items: flex-start;
+    }
+
+
+    /* ------------------- VISITS SECTION ------------------- */
+    .visits-section {
+      margin-top: 3rem;
+      display: flex;
+      gap: clamp(0.5rem, 2vw, 1rem);
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+
+    .visits-section .guest-card .guest-text {
+      min-height: 6rem;
+      text-align: center;
+    }
+
+    .visits-section .guest-card .guest-name {
+      margin-top: 0.8rem;
+      font-size: clamp(1rem, 2vw, 1.4rem);
+      color: #212121;
+    }
+
+    .visits-section .guest-card .guest-description {
+      margin-top: 0.4rem;
+      font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+      color: #212121;
+      line-height: 1.4;
+    }
+
+    .visits-section .guest-card .guest-event a {
+      color: #212121;
+      text-decoration: underline;
+      font-size: clamp(1rem, 1.5vw, 1.3rem);
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .visits-section .guest-card .guest-event a:hover {
+      color: #007BFF;
+    }
+
+    .hidden {
+      display: none;
+      /* removes from layout */
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
     }
 
     .guest-card {
@@ -180,7 +223,7 @@
 
 
     .guest-event a:hover {
-      color: #ffffff;
+      color: #007BFF;
     }
 
 
@@ -493,14 +536,14 @@
             </button>
           </li>
 
-          <!-- الأعضاء NOW GETS YELLOW MODE (DEFAULT ACTIVE) 
+          <!-- الزيارات NOW GETS YELLOW MODE (DEFAULT ACTIVE) -->
+
           <li>
             <button class="filter-button" data-translate-value="100%" data-slider-color="#212121"
-              data-text-color="#ffffff" data-body-color="#ffd700" style="color:#ffffff">
-              الأعضاء
+              data-text-color="#ffffff" data-body-color="#ffd700">
+              الزيارات
             </button>
           </li>
--->
         </ul>
 
         <div class="filter-slider">
@@ -528,7 +571,7 @@
       <div class="guest-event">
         <a href="https://www.facebook.com/photo.php?fbid=1414771387323102&set=a.492184866248430&type=3&ref=embed_post"
           target="_blank">
-          👉 رابط الحدث
+          🔗 رابط الحدث
         </a>
       </div>
     </div>
@@ -547,7 +590,7 @@
       <div class="guest-event">
         <a href="https://www.facebook.com/photo.php?fbid=1414771387323102&set=a.492184866248430&type=3&ref=embed_post"
           target="_blank">
-          👉 رابط الحدث
+          🔗 رابط الحدث
         </a>
       </div>
     </div>
@@ -565,7 +608,7 @@
       <div class="guest-event">
         <a href="https://www.facebook.com/permalink.php?story_fbid=1182644683869108&id=100063707634531&ref=embed_post"
           target="_blank">
-          👉 رابط الحدث
+          🔗 رابط الحدث
         </a>
       </div>
     </div>
@@ -584,7 +627,7 @@
         <!-- Add event link if available -->
         <a href="https://www.facebook.com/permalink.php?story_fbid=910174374449475&id=100063707634531&ref=embed_post"
           target="_blank">
-          👉 رابط الحدث
+          🔗 رابط الحدث
         </a>
       </div>
 
@@ -606,7 +649,7 @@
       <div class="guest-event">
         <a href="https://www.facebook.com/permalink.php?story_fbid=900932752040304&id=100063707634531&ref=embed_post"
           target="_blank">
-          👉 رابط الحدث
+          🔗 رابط الحدث
         </a>
       </div>
     </div>
@@ -624,7 +667,7 @@
       <div class="guest-event">
         <a href="https://www.facebook.com/permalink.php?story_fbid=839390511527862&id=100063707634531&ref=embed_post"
           target="_blank">
-          👉 رابط الحدث
+          🔗 رابط الحدث
         </a>
       </div>
     </div>
@@ -643,7 +686,7 @@
       <div class="guest-event">
         <a href="https://www.facebook.com/permalink.php?story_fbid=839390511527862&id=100063707634531&ref=embed_post"
           target="_blank">
-          👉 رابط الحدث
+          🔗 رابط الحدث
         </a>
       </div>
     </div>
@@ -660,7 +703,7 @@
       <div class="guest-event">
         <a href="https://www.facebook.com/permalink.php?story_fbid=401334191756373&id=100063707634531&ref=embed_post"
           target="_blank">
-          👉 رابط الحدث
+          🔗 رابط الحدث
         </a>
       </div>
     </div>
@@ -678,7 +721,7 @@
       <div class="guest-event">
         <a href="https://www.facebook.com/permalink.php?story_fbid=351598116729981&id=100063707634531&ref=embed_post"
           target="_blank">
-          👉 رابط الحدث
+          🔗 رابط الحدث
         </a>
       </div>
     </div>
@@ -696,7 +739,7 @@
       <div class="guest-event">
         <a href="https://www.facebook.com/permalink.php?story_fbid=330066552216471&id=100063707634531&ref=embed_post"
           target="_blank">
-          👉 رابط الحدث
+          🔗 رابط الحدث
         </a>
       </div>
     </div>
@@ -714,7 +757,7 @@
       <div class="guest-event">
         <a href="https://www.facebook.com/permalink.php?story_fbid=330066552216471&id=100063707634531&ref=embed_post"
           target="_blank">
-          👉 رابط الحدث
+          🔗 رابط الحدث
         </a>
       </div>
     </div>
@@ -732,7 +775,7 @@
       <div class="guest-event">
         <a href="https://www.facebook.com/permalink.php?story_fbid=204934704729657&id=100063707634531&ref=embed_post"
           target="_blank">
-          👉 رابط الحدث
+          🔗 رابط الحدث
         </a>
       </div>
     </div>
@@ -750,7 +793,7 @@
       <div class="guest-event">
         <a href="https://www.facebook.com/permalink.php?story_fbid=201308871758907&id=100063707634531&ref=embed_post"
           target="_blank">
-          👉 رابط الحدث
+          🔗 رابط الحدث
         </a>
       </div>
     </div>
@@ -768,7 +811,7 @@
       <div class="guest-event">
         <a href="https://www.facebook.com/permalink.php?story_fbid=201308871758907&id=100063707634531&ref=embed_post"
           target="_blank">
-          👉 رابط الحدث
+          🔗 رابط الحدث
         </a>
       </div>
     </div>
@@ -785,7 +828,7 @@
       </div>
       <div class="guest-event">
         <a href="https://www.facebook.com/watch/?v=605957920803599" target="_blank">
-          👉 رابط الحدث
+          🔗 رابط الحدث
         </a>
       </div>
     </div>
@@ -804,7 +847,7 @@
       <div class="guest-event">
         <a href="https://www.facebook.com/permalink.php?story_fbid=189015816321546&id=100063707634531&ref=embed_post"
           target="_blank">
-          👉 رابط الحدث
+          🔗 رابط الحدث
         </a>
       </div>
     </div>
@@ -812,9 +855,192 @@
 
   </section>
 
+  <section class="visits-section">
+
+
+    <div class="guest-card">
+      <div class="guest-image-wrapper">
+        <img src="images/كلية العلوم القانونية و السياسية و الاجتماعية بتونس.webp" alt="زيارة تجريبية">
+      </div>
+      <div class="guest-text">
+        <div class="guest-name" style="color:#212121;"> منشأ نادي صوفيا: كلية العلوم القانونية و السياسية و الاجتماعية
+          بتونس </div>
+        <div class="guest-description" style="color:#212121;">
+          <!-- optional description -->
+        </div>
+      </div>
+
+      <div class="guest-event">
+        <a href="https://fsjpst.rnu.tn/ar/" target="_blank">
+          🗺️ رابط المكان
+        </a>
+      </div>
+    </div>
+
+
+    <div class="guest-card">
+      <div class="guest-image-wrapper">
+        <img src="images/Café Culturel Biblio'Thé 3.webp" alt="زيارة تجريبية">
+      </div>
+      <div class="guest-text">
+        <div class="guest-name" style="color:#212121;">Café Culturel Biblio'Thé</div>
+        <div class="guest-description" style="color:#212121;">
+          <!-- optional description -->
+        </div>
+      </div>
+
+      <div class="guest-event">
+        <a href="https://www.facebook.com/p/Caf%C3%A9-Culturel-BiblioTh%C3%A9-100083575920187/?locale=fr_FR"
+          target="_blank">
+          🗺️ رابط المكان
+        </a>
+      </div>
+    </div>
+
+
+    <!-- New Visit Card -->
+    <div class="guest-card">
+      <div class="guest-image-wrapper">
+        <img src="images/Afterwork Coffeeshop.jpg" alt="Afterwork Coffeeshop">
+      </div>
+      <div class="guest-text">
+        <div class="guest-name" style="color:#212121;">Afterwork Coffeeshop</div>
+        <div class="guest-description" style="color:#212121;">
+          <!-- optional description -->
+        </div>
+      </div>
+
+
+      <div class="guest-event">
+        <a href="https://www.facebook.com/AfterWorkCoffeeShop/?locale=fr_FR" target="_blank">
+          🗺️ رابط المكان
+        </a>
+      </div>
+    </div>
+
+
+    <!-- New Visit Card -->
+    <div class="guest-card">
+      <div class="guest-image-wrapper">
+        <img src="images/Espace Culturel Aykart.jpg" alt="Afterwork Coffeeshop">
+      </div>
+      <div class="guest-text">
+        <div class="guest-name" style="color:#212121;">Espace Culturel Aykart</div>
+        <div class="guest-description" style="color:#212121;">
+          <!-- optional description -->
+        </div>
+      </div>
+
+      <div class="guest-event">
+        <a href="https://www.facebook.com/profile.php?id=100063634175450" target="_blank">
+          🗺️ رابط المكان
+        </a>
+      </div>
+    </div>
+
+    <!-- New Visit Card -->
+    <div class="guest-card">
+      <div class="guest-image-wrapper">
+        <img src="images/المدرسة الإعدادية النموذجية بمقرين.jpg" alt="Afterwork Coffeeshop">
+      </div>
+      <div class="guest-text">
+        <div class="guest-name" style="color:#212121;">المدرسة الإعدادية النموذجية بمقرين</div>
+        <div class="guest-description" style="color:#212121;">
+          <!-- optional description -->
+        </div>
+      </div>
+
+      <div class="guest-event">
+        <a href="https://www.facebook.com/CPMEGRINE/?locale=ar_AR" target="_blank">
+          🗺️ رابط المكان
+        </a>
+      </div>
+    </div>
+
+    <!-- New Visit Card -->
+    <div class="guest-card">
+      <div class="guest-image-wrapper">
+        <img src="images/دار الثقافة ابن خلدون.webp" alt="Afterwork Coffeeshop">
+      </div>
+      <div class="guest-text">
+        <div class="guest-name" style="color:#212121;"> دار الثقافة ابن خلدون</div>
+        <div class="guest-description" style="color:#212121;">
+          <!-- optional description -->
+        </div>
+      </div>
+
+      <div class="guest-event">
+        <a href="https://www.facebook.com/profile.php?id=100092297392349" target="_blank">
+          🗺️ رابط المكان
+        </a>
+      </div>
+    </div>
+
+    <!-- New Visit Card -->
+    <div class="guest-card">
+      <div class="guest-image-wrapper">
+        <img src="images/ISSTE Borj Cédria.webp" alt="Afterwork Coffeeshop">
+      </div>
+      <div class="guest-text">
+        <div class="guest-name" style="color:#212121;">المعهد العالي لعلوم وتكنولوجيات البيئة ببرج السدرية </div>
+        <div class="guest-description" style="color:#212121;">
+        </div>
+      </div>
+
+      <div class="guest-event">
+        <a href="https://www.facebook.com/HIESTBC/?locale=fr_FR" target="_blank">
+          🗺️ رابط المكان
+        </a>
+      </div>
+    </div>
+
+    <!-- New Visit Card -->
+    <div class="guest-card">
+      <div class="guest-image-wrapper">
+        <img src="images/المعهد العالي للعلوم الإنسانية بتونس (ابن شرف).jpg" alt="Afterwork Coffeeshop">
+      </div>
+      <div class="guest-text">
+        <div class="guest-name" style="color:#212121;"> المعهد العالي للعلوم الإنسانية بتونس (ابن شرف) </div>
+        <div class="guest-description" style="color:#212121;">
+        </div>
+      </div>
+
+      <div class="guest-event">
+        <a href="https://issht.rnu.tn/ar/accueil-ar/" target="_blank">
+          🗺️ رابط المكان
+        </a>
+      </div>
+    </div>
+
+    <!-- New Visit Card -->
+    <div class="guest-card">
+      <div class="guest-image-wrapper">
+        <img src="images/دار الثقافة باب العسل
+.jpg" alt="Afterwork Coffeeshop">
+      </div>
+      <div class="guest-text">
+        <div class="guest-name" style="color:#212121;"> دار الثقافة باب العسل
+        </div>
+        <div class="guest-description" style="color:#212121;">
+        </div>
+      </div>
+
+      <div class="guest-event">
+        <a href="https://www.facebook.com/p/%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D8%AB%D9%82%D8%A7%D9%81%D8%A9-%D8%A7%D8%AD%D9%85%D8%AF-%D8%AE%D9%8A%D8%B1-%D8%A7%D9%84%D8%AF%D9%8A%D9%86-%D8%A8%D8%A8%D8%A7%D8%A8-%D8%A7%D9%84%D8%B9%D8%B3%D9%84-100076571979677/"
+          target="_blank">
+          🗺️ رابط المكان
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+
   <script>
     const buttons = document.querySelectorAll(".filter-button");
     const slider = document.querySelector(".filter-slider-rect");
+    const guestsSection = document.querySelector(".guests-section");
+    const visitsSection = document.querySelector(".visits-section");
 
     function activate(btn) {
       buttons.forEach(b => b.style.color = "#f57c00");
@@ -823,14 +1049,28 @@
       slider.style.backgroundColor = btn.dataset.sliderColor;
       document.body.style.backgroundColor = btn.dataset.bodyColor;
       btn.style.color = btn.dataset.textColor;
+
+      if (btn.textContent.trim() === "الزيارات") {
+        guestsSection.classList.remove("visible");
+        guestsSection.classList.add("hidden");
+
+        visitsSection.classList.remove("hidden");
+        visitsSection.classList.add("visible");
+      } else {
+        visitsSection.classList.remove("visible");
+        visitsSection.classList.add("hidden");
+
+        guestsSection.classList.remove("hidden");
+        guestsSection.classList.add("visible");
+      }
     }
 
-    buttons.forEach(btn => {
-      btn.addEventListener("click", () => activate(btn));
-    });
+    buttons.forEach(btn => btn.addEventListener("click", () => activate(btn)));
 
-    // ✅ DEFAULT = الضيوف
+    // default
     activate(buttons[0]);
+
+
   </script>
 
 

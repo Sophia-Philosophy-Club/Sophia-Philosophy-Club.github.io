@@ -7,7 +7,21 @@
 <head>
     <meta charset="UTF-8">
     <title>تفاصيل المناقشات - Sophia Philosophy Club</title>
-    <link rel="icon" type="image/jpeg" href="images/sophia.jpg">
+    <!-- Open Graph meta tags for Messenger / social preview -->
+    <meta property="og:title" content="نادي صوفيا للفلسفة - الصفحة الرئيسية">
+    <meta property="og:description" content="مرحبا بكم في نادي صوفيا للفلسفة">
+    <meta property="og:image" content="https://sophia-philosophy-club.github.io/images/sophia.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sophia-philosophy-club.github.io/">
+
+    <!-- Twitter card (optional) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="نادي صوفيا للفلسفة - الصفحة الرئيسية">
+    <meta name="twitter:description" content="مرحبا بكم في نادي صوفيا للفلسفة">
+    <meta name="twitter:image" content="https://sophia-philosophy-club.github.io/images/sophia.jpg">
+
+    <link rel="icon" type="image/jpeg" href="https://sophia-philosophy-club.github.io/images/sophia.jpg">
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -26,7 +40,7 @@
             padding: 0;
             overflow-x: hidden;
             font-family: "Arial", sans-serif;
-            background-color: #222222;
+            background-color: #000000;
             color: #FFD120;
             display: flex;
             flex-direction: column;
@@ -39,7 +53,7 @@
             width: 100%;
             padding: 20px;
             text-align: center;
-            background-color: rgba(60, 60, 60, 0.7);
+            background-color: #000000;
             font-size: 24px;
             font-weight: bold;
             font-family: 'Taro', Arial, sans-serif;
@@ -315,15 +329,23 @@
             }
 
             footer {
-                flex-direction: column;
-                gap: 4px;
-                font-size: 14px;
-                padding: 6px 0;
+                display: grid;
+                grid-template-columns: 60% 40%;
+                column-gap: clamp(6px, 2vw, 12px);
+                row-gap: 4px;
+                align-items: start;
+                text-align: left;
+                font-size: 11px;
+                padding: 5px 10px;
             }
 
+
             footer img {
-                width: 18px !important;
+                width: 14px !important;
+                height: auto;
                 vertical-align: middle;
+                margin-right: 5px;
+                margin-left: 5px;
             }
         }
 
@@ -334,34 +356,46 @@
         /* Adjust footer dynamically for short screens */
         @media screen and (max-height: 600px) {
             footer {
-                font-size: clamp(12px, 2vw, 14px);
-                /* smaller text on short screens */
-                padding: clamp(4px, 1.5vh, 6px) 0;
-                /* reduce vertical padding */
-                gap: clamp(2px, 1vw, 6px);
-                /* reduce space between items */
+                display: grid;
+                grid-template-columns: 60% 40%;
+                column-gap: clamp(6px, 2vw, 12px);
+                row-gap: 4px;
+                align-items: start;
+                text-align: left;
+                font-size: 11px;
+                padding: 5px 10px;
             }
 
+
             footer img {
-                width: clamp(14px, 3vw, 18px);
-                /* scale icons smaller */
+                width: 14px !important;
+                height: auto;
+                vertical-align: middle;
+                margin-right: 5px;
+                margin-left: 5px;
             }
         }
 
         /* Adjust footer dynamically for very short screens */
         @media screen and (max-height: 400px) {
             footer {
-                font-size: clamp(10px, 1.5vw, 12px);
-                /* even smaller text */
-                padding: clamp(2px, 1vh, 4px) 0;
-                /* minimal vertical padding */
-                gap: clamp(1px, 0.5vw, 3px);
-                /* minimal spacing */
+                display: grid;
+                grid-template-columns: 60% 40%;
+                column-gap: clamp(6px, 2vw, 12px);
+                row-gap: 4px;
+                align-items: start;
+                text-align: left;
+                font-size: 11px;
+                padding: 5px 10px;
             }
 
+
             footer img {
-                width: clamp(12px, 2.5vw, 14px);
-                /* smaller icons */
+                width: 14px !important;
+                height: auto;
+                vertical-align: middle;
+                margin-right: 5px;
+                margin-left: 5px;
             }
         }
     </style>
@@ -657,16 +691,29 @@
             <img src="images/mail.png" alt="Email" style="width:20px; vertical-align:middle; margin-right:5px;">
             <a href="mailto:sophia.club2020@gmail.com">sophia.club2020@gmail.com</a>
         </span>
+
         <span>
             <img src="images/facebook.png" alt="Facebook" style="width:26px; vertical-align:middle; margin-right:5px;">
             <a href="https://www.facebook.com/profile.php?id=100063707634531" target="_blank" class="arabic">صفحة
                 فيسبوك</a>
         </span>
+
         <span>
             <img src="images/instagram.png" alt="Instagram"
                 style="width:28px; vertical-align:middle; margin-right:5px;">
             <a href="https://www.instagram.com/sophiaphilosophy/?hl=fr" target="_blank" class="arabic">صفحة انستغرام</a>
         </span>
+
+        <span>
+            <img src="images/youtube.png" alt="Youtube" style="width:28px; vertical-align:middle; margin-right:5px;">
+            <a href="https://www.youtube.com/@sophiaclub2020" target="_blank" class="arabic">صفحة اليوتوب</a>
+        </span>
+
+        <span>
+            <img src="images/medium.png" alt="medium" style="width:28px; vertical-align:middle; margin-right:5px;">
+            <a href="https://medium.com/@sophia.club2020" target="_blank" class="arabic">Medium</a>
+        </span>
+
     </footer>
 
 
